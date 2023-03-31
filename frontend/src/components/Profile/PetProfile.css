@@ -83,3 +83,7 @@
     text-transform: none;
 }
 
+.contact-owner-button.MuiButton-contained:hover {
+    background-color: #F9C983;
+    box-shadow: none;
+}
