@@ -1,0 +1,85 @@
+.profile-page-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 4%;
+}
+
+.pet-picture {
+    background-color: #F9C983;
+    height: 35vh;
+    width: 100%;
+    border-radius: 13px;
+}
+
+.pet-info {
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+
+.pet-name h1 {
+    margin-top: 1vh;
+    margin-bottom: 0px;
+    font-weight: 800 !important;
+    font-size: 3vh;
+}
+
+.pet-breed h2 {
+    margin-top: 0.7vh;
+    margin-bottom: 1.3vh;
+    color: #938F8F;
+    font-size: 2vh;
+    font-weight: 800 !important;
+}
+
+.info-row {
+    display: flex;
+}
+
+.info-row h3 {
+    font-size: 1.5vh;
+    font-weight: 800 !important;
+    color: #757171;
+    margin-bottom: 0.55vh;
+}
+
+.info-row p {
+    font-size: 1.55vh;
+    font-weight: 700 !important;
+    color: #3F4144;
+    margin-top: 0px;
+}
+
+.specific-info {
+    margin-right: 20%;
+}
+
+.owner {
+    display: flex;
+    margin-bottom: 3vh;
+}
+
+.owner p{
+    margin-top: 1vh;
+    margin-left: 1vh;
+}
+
+.owner-icon {
+    font-size: 3.5rem !important;
+}
+
+.contact-owner-button {
+    width: 100%;
+    height: 5.5vh;
+}
+
+.contact-owner-button.MuiButton-contained {
+    background-color: #F9C983;
+    color: #FFF;
+    border-radius: 1.1vh;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: 1.9vh;
+    font-weight: 800;
+    text-transform: none;
+}
+
