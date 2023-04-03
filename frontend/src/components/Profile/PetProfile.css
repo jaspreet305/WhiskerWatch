@@ -9,6 +9,28 @@
     height: 35vh;
     width: 100%;
     border-radius: 13px;
+    position: relative;
+}
+
+.back-pet-button.MuiButton-contained {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: 1.9vh;
+    font-weight: 800;
+    text-transform: none;
+    background-color: #FFF;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 13px;
+    color: #3F4144;
+}
+
+.back-pet-button.MuiButton-contained:hover {
+    box-shadow: none;
+    background-color: #FFF;
 }
 
 .pet-info {

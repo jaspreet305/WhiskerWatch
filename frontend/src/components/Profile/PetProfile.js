@@ -4,12 +4,16 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export function PetProfile() {
 
     return (
         <Container className="profile-page-container">
             <Grid className="pet-picture">
+                <Grid>
+                    <Button className="back-pet-button" variant="contained"> <ArrowBackIcon /></Button>
+                </Grid>
             </Grid>
             <Grid className="pet-info">
                 <div className="pet-name">
