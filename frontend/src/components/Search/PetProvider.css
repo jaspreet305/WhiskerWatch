@@ -1,0 +1,60 @@
+.provider-card {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.provider-card:hover {
+    transform: scale(1.05);
+}
+
+.provider-card img {
+    object-fit: cover;
+    height: 200px;
+}
+
+.provider-card .info {
+    padding: 16px;
+}
+
+.provider-card h5 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.provider-card p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.provider-card .rating {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    color: #f39c12;
+}
+
+.provider-card .rating span {
+    margin-right: 8px;
+}
+
+.provider-card .rating svg {
+    width: 24px;
+    height: 24px;
+    fill: #f39c12;
+}
+
+.filter-buttons {
+    margin-bottom: 16px;
+}
+
+.filter-buttons button {
+    margin-right: 8px;
+    border-radius: 30px;
+}
+
+.search-input {
+    margin-bottom: 16px;
+}
