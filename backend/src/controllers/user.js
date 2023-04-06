@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const workerService = require("../services/workers");
+const userService = require("../services/user");
 const auth = require("../middlewares/auth");
 
 router.get('/', async (req,res) => {
     try {
-        const result = await workerService.findAll();
+        const result = await userService.findAll();
         res.status(result.status).send(result.data);
     } catch (e) {
         res.status(500).send(e.message);
@@ -14,7 +14,7 @@ router.get('/', async (req,res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        const result = await workerService.findOne(req.params.id);
+        const result = await userService.findOne(req.params.id);
         res.status(result.status).send(result.data);
     } catch (e) {
         res.status(500).send(e.message);
@@ -23,8 +23,8 @@ router.get('/:id', async (req, res) => {
 
 router.post('/signup', async (req, res) => {
     try {
-        let worker = req.body;
-        const result = await workerService.create(worker);
+        let user = req.body;
+        const result = await userService.create(user);
         res.status(result.status).send(result.data);
     } catch (e) {
         if (e.code === 11000) {
@@ -37,8 +37,8 @@ router.post('/signup', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
-        let worker = req.body;
-        const result = await workerService.login(worker);
+        let user = req.body;
+        const result = await userService.login(user);
         res.status(result.status).send(result.data);
     } catch (e) {
         res.status(500).send(e.message);
@@ -47,8 +47,26 @@ router.post('/login', async (req, res) => {
 
 router.put('/:id', auth, async (req, res) => {
     try {
-        let worker = req.body;
-        const result = await workerService.edit(req.params.id, worker);
+        let user = req.body;
+        const result = await userService.edit(req.params.id, user);
+        res.status(result.status).send(result.data);
+    } catch (e) {
+        res.status(500).send(e.message);
+    }
+});
+
+router.post('/request/:appointment', auth, async (req, res) => {
+    try {
+        const result = await userService.requestAppointment(req.params.appointment);
+        res.status(result.status).send(result.data);
+    } catch (e) {
+        res.status(500).send(e.message);
+    }
+});
+
+router.get('/appointments/:id', auth, async (req, res) => {
+    try {
+        const result = await userService.getAppointmentsByUser(req.params.id);
         res.status(result.status).send(result.data);
     } catch (e) {
         res.status(500).send(e.message);

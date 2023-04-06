@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const Joi = require('joi');
 const mongoose = require('mongoose');
+const {petSchema} = require("./pet");
 
 const userSchema = new mongoose.Schema({
     firstName: {
@@ -33,11 +34,9 @@ const userSchema = new mongoose.Schema({
     },
     city: {
         type: String,
-        require: true
+        required: true
     },
-    pets: [{
-        petId: String
-    }]
+    pets: [petSchema]
 });
 
 userSchema.methods.generateAuthToken = function () {
@@ -52,7 +51,7 @@ userSchema.methods.generateAuthToken = function () {
     }, process.env.JWT_PRIVATE_KEY);
 }
 
-const Users = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
 
 function validateUser(user) {
     const schema = Joi.object({
@@ -72,7 +71,7 @@ function validate_auth(req) {
     return schema.validate(req);
 }
 
-exports.User = Users;
+exports.User = User;
 exports.userSchema = userSchema;
 exports.validate = validateUser;
 exports.validate_auth = validate_auth;

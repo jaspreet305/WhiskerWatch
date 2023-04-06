@@ -1,6 +1,7 @@
 const ObjectId = require('mongoose').Types.ObjectId;
-const {Worker, validate, validate_auth} = require("../models/workers");
+const {Worker, validate, validate_auth} = require("../models/worker");
 const {BadRequest, Success, NotFound, Created} = require("../utils/results");
+const {Appointment} = require("../models/appointment");
 var bcrypt = require('bcrypt');
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -13,7 +14,7 @@ const findOne = async (id) => {
 }
 
 const findAll = async () => {
-    const workers = await Worker.find().sort({ firstName: 'asc', lastName: 'asc' }).select("firstName lastName");
+    const workers = await Worker.find().sort({firstName: 'asc', lastName: 'asc'}).select("firstName lastName");
     return Success(workers);
 };
 
@@ -68,9 +69,32 @@ const deleteWorker = async (id) => {
     return Success(deletedWorker._id);
 }
 
+const acceptAppointment = async (id) => {
+    if (id !== new ObjectId(id).toString()) return BadRequest("Invalid Appointment Id");
+    let appointment = await Appointment.findByIdAndUpdate(id, {status: "Accepted"}, {new: true}).populate("user", "firstName lastName avatar email");
+    if (!appointment) return NotFound("Appointment not found");
+    return Success(appointment);
+}
+
+const declineAppointment = async (id) => {
+    if (id !== new ObjectId(id).toString()) return BadRequest("Invalid Appointment Id");
+    let appointment = await Appointment.findByIdAndUpdate(id, {status: "Declined"}, {new: true}).populate("user", "firstName lastName avatar email");
+    if (!appointment) return NotFound("Appointment not found");
+    return Success(appointment);
+}
+
+const getAllAppointments = async (id) => {
+    if (id !== new ObjectId(id).toString()) return BadRequest("Invalid Worker Id");
+    const appointments = await Appointment.find({worker: id}).populate("user", "firstName lastName avatar email").sort({date: 'asc'});
+    return Success(appointments);
+};
+
 exports.findOne = findOne;
 exports.create = create;
 exports.login = login;
 exports.edit = edit;
 exports.deleteWorker = deleteWorker;
 exports.findAll = findAll;
+exports.acceptAppointment = acceptAppointment;
+exports.declineAppointment = declineAppointment;
+exports.getAllAppointments = getAllAppointments;

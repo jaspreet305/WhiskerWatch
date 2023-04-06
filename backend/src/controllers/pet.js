@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const petService = require("../services/pets");
+const petService = require("../services/pet");
 const auth = require("../middlewares/auth");
 const {promisify} = require("util");
 const multer = require("multer");

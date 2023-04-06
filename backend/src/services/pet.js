@@ -1,5 +1,5 @@
 const ObjectId = require('mongoose').Types.ObjectId;
-const {Pet} = require("../models/pets");
+const {Pet} = require("../models/pet");
 const {BadRequest, Success, NotFound, Created} = require("../utils/results");
 
 const findAll = async () => {
