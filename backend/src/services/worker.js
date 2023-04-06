@@ -73,13 +73,33 @@ const acceptAppointment = async (id) => {
     if (id !== new ObjectId(id).toString()) return BadRequest("Invalid Appointment Id");
     let appointment = await Appointment.findByIdAndUpdate(id, {status: "Accepted"}, {new: true}).populate("user", "firstName lastName avatar email");
     if (!appointment) return NotFound("Appointment not found");
-    return Success(appointment);
-}
 
-const declineAppointment = async (id) => {
-    if (id !== new ObjectId(id).toString()) return BadRequest("Invalid Appointment Id");
-    let appointment = await Appointment.findByIdAndUpdate(id, {status: "Declined"}, {new: true}).populate("user", "firstName lastName avatar email");
-    if (!appointment) return NotFound("Appointment not found");
+    // Send email to user
+    const userEmail = appointment.user.email;
+    const petName = appointment.pet.name;
+    const appointmentDate = appointment.date.toDateString();
+    const emailBody = `Your appointment for ${appointment.type} on ${appointmentDate} for ${petName} has been scheduled. Thank you for choosing our service!`;
+    const userMsg = {
+        to: userEmail,
+        from: process.env.SENDGRID_EMAIL,
+        subject: 'Appointment Scheduled',
+        text: emailBody,
+        html: `<p>${emailBody}</p>`,
+    };
+    await sgMail.send(userMsg);
+
+    // Send email to worker
+    const workerEmail = appointment.worker.email;
+    const workerBody = `You have a new appointment scheduled for ${appointment.type} on ${appointmentDate} with ${appointment.user.firstName} ${appointment.user.lastName}'s pet ${petName}.`;
+    const workerMsg = {
+        to: workerEmail,
+        from: process.env.SENDGRID_EMAIL,
+        subject: 'New Scheduled Appointment',
+        text: workerBody,
+        html: `<p>${workerBody}</p>`,
+    };
+    await sgMail.send(workerMsg);
+
     return Success(appointment);
 }
 

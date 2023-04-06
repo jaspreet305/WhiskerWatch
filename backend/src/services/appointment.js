@@ -31,16 +31,6 @@ const createAppointment = async (appointment) => {
     let app = await new Appointment(appointment);
     await app.save();
 
-    // Send email to the user
-    const msg = {
-        to: user.email,
-        from: process.env.SENDGRID_EMAIL,
-        subject: "Appointment request received",
-        text: `Dear ${user.firstName}, Your appointment request has been received.`,
-        html: `<p>Dear ${user.firstName},</p><p>Your appointment request has been received.</p>`,
-    };
-    await sgMail.send(msg);
-
     return Created(app);
 };
 
