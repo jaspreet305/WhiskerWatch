@@ -1,0 +1,373 @@
+.appointments-div {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.appointments-div-2 {
+    background-color: #ffffff;
+    border: 1px none;
+    height: 812px;
+    position: relative;
+    width: 375px;
+}
+
+.appointments-status-bar {
+    height: 11px;
+    left: 24px;
+    position: absolute;
+    top: 10px;
+    width: 327px;
+}
+
+.appointments-right-side {
+    height: 11px;
+    left: 260px;
+    position: absolute;
+    top: 0;
+    width: 67px;
+}
+
+.appointments-battery {
+    height: 11px;
+    left: 42px;
+    position: absolute;
+    top: 0;
+    width: 24px;
+}
+
+.appointments-img {
+    height: 11px;
+    left: 22px;
+    position: absolute;
+    top: 0;
+    width: 15px;
+}
+
+.appointments-icon-bar-chart {
+    height: 11px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 17px;
+}
+
+.appointments-left-side {
+    height: 11px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 28px;
+}
+
+.appointments-overlap-group {
+    border-radius: 25px;
+    height: 304px;
+    left: 8px;
+    position: absolute;
+    top: 184px;
+    width: 359px;
+}
+
+.appointments-vector {
+    height: 14px;
+    left: 312px;
+    position: absolute;
+    top: 114px;
+    width: 8px;
+}
+
+.appointments-rectangle {
+    -webkit-backdrop-filter: blur(4px) brightness(100%);
+    backdrop-filter: blur(4px) brightness(100%);
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #f9c983;
+    border-radius: 25px;
+    height: 304px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 359px;
+}
+
+.appointments-text-wrapper {
+    color: #000000;
+    font-family: "SF Compact Rounded-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    left: 183px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 46px;
+}
+
+.appointments-image-removebg-preview {
+    height: 122px;
+    left: 10px;
+    position: absolute;
+    top: 46px;
+    width: 157px;
+}
+
+.appointments-APPOINTMENT-DETAILS {
+    color: #747070;
+    font-family: "SF Compact Rounded-Semibold", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 31px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 207px;
+    width: 181px;
+}
+
+.appointments-dog-sitter {
+    color: #000000;
+    font-family: "SF Compact Rounded-Semibold", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 261px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 108px;
+    width: 69px;
+}
+
+.appointments-AGE {
+    color: #747070;
+    font-family: "SF Compact Rounded-Semibold", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 187px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 147px;
+}
+
+.appointments-RATE {
+    color: #747070;
+    font-family: "SF Compact Rounded-Semibold", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 188px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 91px;
+}
+
+.appointments-text-wrapper-2 {
+    color: #000000;
+    font-family: "SF Compact Rounded-Semibold", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 187px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 168px;
+}
+
+.appointments-RATING {
+    color: #747070;
+    font-family: "SF Compact Rounded-Semibold", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 261px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 147px;
+}
+
+.appointments-EXPERTISE {
+    color: #747070;
+    font-family: "SF Compact Rounded-Semibold", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 261px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 91px;
+}
+
+.appointments-text-wrapper-3 {
+    color: #000000;
+    font-family: "SF Compact Rounded-Semibold", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 188px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 108px;
+}
+
+.appointments-date-august-at-am {
+    color: #000000;
+    font-family: "SF Compact Rounded-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 266px;
+    width: 225px;
+}
+
+.appointments-span {
+    font-weight: 700;
+}
+
+.appointments-text-wrapper-4 {
+    font-family: "SF Compact Rounded-Medium", Helvetica;
+    font-weight: 500;
+}
+
+.appointments-type-dog-walking {
+    color: #000000;
+    font-family: "SF Compact Rounded-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 31px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 236px;
+    width: 115px;
+}
+
+.appointments-icon-star {
+    height: 14px;
+    left: 277px;
+    position: absolute;
+    top: 167px;
+    width: 14px;
+}
+
+.appointments-icon-star-2 {
+    height: 14px;
+    left: 259px;
+    position: absolute;
+    top: 167px;
+    width: 14px;
+}
+
+.appointments-icon-star-3 {
+    height: 14px;
+    left: 313px;
+    position: absolute;
+    top: 168px;
+    width: 14px;
+}
+
+.appointments-icon-star-4 {
+    height: 14px;
+    left: 294px;
+    position: absolute;
+    top: 167px;
+    width: 14px;
+}
+
+.appointments-icon-star-5 {
+    height: 14px;
+    left: 331px;
+    position: absolute;
+    top: 168px;
+    width: 14px;
+}
+
+.appointments-text {
+    height: 41px;
+    left: 20px;
+    position: absolute;
+    top: 115px;
+    width: 326px;
+}
+
+.appointments-h-1 {
+    color: #f9c983;
+    font-family: "SF Compact Rounded-Bold", Helvetica;
+    font-size: 34px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}
+
+.appointments-overlap {
+    background-color: #f9c983;
+    border-radius: 10px;
+    height: 56px;
+    left: 29px;
+    position: absolute;
+    top: 690px;
+    width: 320px;
+}
+
+.appointments-text-wrapper-5 {
+    color: #ffffff;
+    font-family: "SF Compact Rounded-Bold", Helvetica;
+    font-size: 18px;
+    font-weight: 700;
+    left: 121px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 16px;
+    width: 78px;
+}
+
+.appointments-overlap-group2 {
+    background-color: #f9c983;
+    border-radius: 10px;
+    height: 56px;
+    left: 29px;
+    position: absolute;
+    top: 605px;
+    width: 320px;
+}
+
+.appointments-text-wrapper-6 {
+    color: #ffffff;
+    font-family: "Nunito", Helvetica;
+    font-size: 18px;
+    font-weight: 600;
+    left: 147px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 576px;
+    width: 80px;
+}
+
+.appointments-overlap-group3 {
+    background-image: url(../../../static/img/rectangle-26-1.svg);
+    background-size: 100% 100%;
+    height: 34px;
+    left: 27px;
+    position: absolute;
+    top: 57px;
+    width: 36px;
+}
+
+.appointments-arrow {
+    height: 11px;
+    left: 10px;
+    position: absolute;
+    top: 11px;
+    width: 14px;
+}

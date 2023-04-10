@@ -1,0 +1,412 @@
+.appointments-screen-div {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.appointments-screen-div-2 {
+  background-color: #ffffff;
+  border: 1px none;
+  height: 812px;
+  position: relative;
+  width: 375px;
+}
+
+.appointments-screen-status-bar {
+  height: 11px;
+  left: 24px;
+  position: absolute;
+  top: 10px;
+  width: 327px;
+}
+
+.appointments-screen-right-side {
+  height: 11px;
+  left: 260px;
+  position: absolute;
+  top: 0;
+  width: 67px;
+}
+
+.appointments-screen-battery {
+  height: 11px;
+  left: 42px;
+  position: absolute;
+  top: 0;
+  width: 24px;
+}
+
+.appointments-screen-img {
+  height: 11px;
+  left: 22px;
+  position: absolute;
+  top: 0;
+  width: 15px;
+}
+
+.appointments-screen-icon-bar-chart {
+  height: 11px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 17px;
+}
+
+.appointments-screen-left-side {
+  height: 11px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.appointments-screen-overlap-group {
+  height: 71px;
+  left: 22px;
+  position: absolute;
+  top: 164px;
+  width: 330px;
+}
+
+.appointments-screen-vector {
+  height: 14px;
+  left: 303px;
+  position: absolute;
+  top: 57px;
+  width: 8px;
+}
+
+.appointments-screen-rectangle {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #f9c983;
+  border-radius: 10px;
+  height: 62px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 330px;
+}
+
+.appointments-screen-text-wrapper {
+  color: #000000;
+  font-family: "SF Compact Rounded-Semibold", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  left: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 7px;
+}
+
+.appointments-screen-text-wrapper-2 {
+  color: #747070;
+  font-family: "SF Compact Rounded-Semibold", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 32px;
+}
+
+.appointments-screen-text-wrapper-3 {
+  color: #000000;
+  font-family: "Nunito", Helvetica;
+  font-size: 13px;
+  font-weight: 600;
+  left: 251px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 7px;
+}
+
+.appointments-screen-text-wrapper-4 {
+  color: #000000;
+  font-family: "Nunito", Helvetica;
+  font-size: 13px;
+  font-weight: 600;
+  left: 262px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 32px;
+}
+
+.appointments-screen-overlap {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #f9c983;
+  border-radius: 10px;
+  height: 62px;
+  left: 22px;
+  position: absolute;
+  top: 253px;
+  width: 330px;
+}
+
+.appointments-screen-text-wrapper-5 {
+  color: #000000;
+  font-family: "SF Compact Rounded-Semibold", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  left: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+}
+
+.appointments-screen-text-wrapper-6 {
+  color: #747070;
+  font-family: "SF Compact Rounded-Semibold", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 30px;
+}
+
+.appointments-screen-text-wrapper-7 {
+  color: #000000;
+  font-family: "Nunito", Helvetica;
+  font-size: 13px;
+  font-weight: 600;
+  left: 249px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+}
+
+.appointments-screen-text-wrapper-8 {
+  color: #000000;
+  font-family: "Nunito", Helvetica;
+  font-size: 13px;
+  font-weight: 600;
+  left: 260px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 30px;
+}
+
+.appointments-screen-overlap-group5 {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #f9c983;
+  border-radius: 10px;
+  height: 62px;
+  left: 22px;
+  position: absolute;
+  top: 341px;
+  width: 330px;
+}
+
+.appointments-screen-text-wrapper-9 {
+  color: #000000;
+  font-family: "SF Compact Rounded-Semibold", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  left: 9px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.appointments-screen-text-wrapper-10 {
+  color: #747070;
+  font-family: "SF Compact Rounded-Semibold", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 31px;
+}
+
+.appointments-screen-text-wrapper-11 {
+  color: #000000;
+  font-family: "Nunito", Helvetica;
+  font-size: 13px;
+  font-weight: 600;
+  left: 260px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 31px;
+}
+
+.appointments-screen-text-wrapper-12 {
+  color: #000000;
+  font-family: "Nunito", Helvetica;
+  font-size: 13px;
+  font-weight: 600;
+  left: 249px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+}
+
+.appointments-screen-overlap-group6 {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #f9c983;
+  border-radius: 10px;
+  height: 62px;
+  left: 22px;
+  position: absolute;
+  top: 431px;
+  width: 330px;
+}
+
+.appointments-screen-text-wrapper-13 {
+  color: #000000;
+  font-family: "Nunito", Helvetica;
+  font-size: 13px;
+  font-weight: 600;
+  left: 248px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+}
+
+.appointments-screen-text-wrapper-14 {
+  color: #000000;
+  font-family: "Nunito", Helvetica;
+  font-size: 13px;
+  font-weight: 600;
+  left: 259px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 30px;
+}
+
+.appointments-screen-overlap-group3 {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #f9c983;
+  border-radius: 10px;
+  height: 62px;
+  left: 22px;
+  position: absolute;
+  top: 520px;
+  width: 330px;
+}
+
+.appointments-screen-text-wrapper-15 {
+  color: #000000;
+  font-family: "SF Compact Rounded-Semibold", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  left: 9px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  width: 157px;
+}
+
+.appointments-screen-text-wrapper-16 {
+  color: #747070;
+  font-family: "SF Compact Rounded-Semibold", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 30px;
+}
+
+.appointments-screen-overlap-group2 {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #f9c983;
+  border-radius: 10px;
+  height: 62px;
+  left: 22px;
+  position: absolute;
+  top: 609px;
+  width: 330px;
+}
+
+.appointments-screen-text-wrapper-17 {
+  color: #000000;
+  font-family: "SF Compact Rounded-Semibold", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  left: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  width: 120px;
+}
+
+.appointments-screen-text {
+  height: 41px;
+  left: 22px;
+  position: absolute;
+  top: 95px;
+  width: 227px;
+}
+
+.appointments-screen-h-1 {
+  color: #f9c983;
+  font-family: "SF Compact Rounded-Bold", Helvetica;
+  font-size: 34px;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+}
+
+.appointments-screen-overlap-group4 {
+  background-image: url(../../../static/img/rectangle-26-1.svg);
+  background-size: 100% 100%;
+  height: 34px;
+  left: 24px;
+  position: absolute;
+  top: 48px;
+  width: 36px;
+}
+
+.appointments-screen-arrow {
+  height: 11px;
+  left: 11px;
+  position: absolute;
+  top: 11px;
+  width: 14px;
+}

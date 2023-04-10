@@ -1,0 +1,219 @@
+.logged-out-div {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.logged-out-div-2 {
+  background-color: #ffffff;
+  border: 0px none;
+  height: 812px;
+  position: relative;
+  width: 375px;
+}
+
+.logged-out-status-bar {
+  height: 44px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 375px;
+}
+
+.logged-out-connections {
+  height: 16px;
+  left: 293px;
+  position: absolute;
+  top: 15px;
+  width: 68px;
+}
+
+.logged-out-battery {
+  height: 12px;
+  left: 43px;
+  position: absolute;
+  top: 2px;
+  width: 25px;
+}
+
+.logged-out-overlap-group {
+  border: 1px solid;
+  border-color: #00000059;
+  border-radius: 2.67px;
+  height: 11px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 22px;
+}
+
+.logged-out-capacity {
+  background-color: #000000;
+  border-radius: 1.33px;
+  height: 7px;
+  left: 1px;
+  position: relative;
+  top: 1px;
+  width: 18px;
+}
+
+.logged-out-cap {
+  height: 4px;
+  left: 23px;
+  position: absolute;
+  top: 4px;
+  width: 1px;
+}
+
+.logged-out-wifi {
+  height: 15px;
+  left: 20px;
+  position: absolute;
+  top: 1px;
+  width: 21px;
+}
+
+.logged-out-img {
+  height: 11px;
+  left: 3px;
+  position: absolute;
+  top: 1px;
+  width: 15px;
+}
+
+.logged-out-cellular-connection {
+  height: 12px;
+  left: 0;
+  position: absolute;
+  top: 2px;
+  width: 18px;
+}
+
+.logged-out-img-2 {
+  height: 11px;
+  left: 1px;
+  position: absolute;
+  top: 1px;
+  width: 17px;
+}
+
+.logged-out-time {
+  height: 23px;
+  left: 21px;
+  position: absolute;
+  top: 8px;
+  width: 56px;
+}
+
+.logged-out-text-wrapper {
+  color: #000000;
+  font-family: "SF Pro Text-Semibold", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: -0.33px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+  width: 54px;
+}
+
+.logged-out-overlap {
+  border-radius: 6px;
+  height: 52px;
+  left: 192px;
+  position: absolute;
+  top: 727px;
+  width: 167px;
+}
+
+.logged-out-register {
+  color: #000000;
+  font-family: "SF Pro Text-Bold", Helvetica;
+  font-size: 13px;
+  font-weight: 700;
+  height: 16px;
+  left: 51px;
+  letter-spacing: -0.2px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 2px;
+}
+
+.logged-out-button {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #f8c982;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 52px;
+  left: 16px;
+  position: relative;
+  top: 727px;
+  width: 167px;
+}
+
+.logged-out-log-in {
+  color: #f8c982;
+  font-family: "SF Compact Rounded-Black", Helvetica;
+  font-size: 13px;
+  font-weight: 900;
+  height: 16px;
+  left: 60px;
+  letter-spacing: 0.52px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 16px;
+}
+
+.logged-out-shape {
+  background-color: #000000;
+  border-radius: 10px;
+  height: 5px;
+  left: 120px;
+  position: absolute;
+  top: 799px;
+  width: 135px;
+}
+
+.logged-out-image {
+  height: 644px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 44px;
+  width: 375px;
+}
+
+.button-button {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #f8c982;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 52px;
+  left: 16px;
+  position: relative;
+  top: 727px;
+  width: 167px;
+}
+
+.button-log-in {
+  color: #f8c982;
+  font-family: "SF Compact Rounded-Black", Helvetica;
+  font-size: 13px;
+  font-weight: 900;
+  height: 16px;
+  left: 60px;
+  letter-spacing: 0.52px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 16px;
+}
+

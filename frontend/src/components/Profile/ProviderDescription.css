@@ -1,0 +1,340 @@
+.sign-up-page-pet-with-photo-yes-div {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.sign-up-page-pet-with-photo-yes-div-2 {
+    background-color: #ffffff;
+    border: 1px none;
+    height: 812px;
+    position: relative;
+    width: 375px;
+}
+
+.sign-up-page-pet-with-photo-yes-overlap {
+    height: 591px;
+    left: 32px;
+    position: absolute;
+    top: 199px;
+    width: 326px;
+}
+
+.sign-up-page-pet-with-photo-yes-rectangle {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px #00000040, -2px -2px 10px #00000040;
+    height: 516px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 315px;
+}
+
+.sign-up-page-pet-with-photo-yes-overlap-group-wrapper {
+    height: 37px;
+    left: 139px;
+    position: absolute;
+    top: 475px;
+    width: 37px;
+}
+
+.sign-up-page-pet-with-photo-yes-overlap-group {
+    background-image: url(../../../static/img/vector-3.svg);
+    background-size: 100% 100%;
+    height: 34px;
+    left: 2px;
+    position: relative;
+    top: 2px;
+    width: 34px;
+}
+
+.sign-up-page-pet-with-photo-yes-vector {
+    height: 15px;
+    left: 15px;
+    position: absolute;
+    top: 9px;
+    width: 9px;
+}
+
+.sign-up-page-pet-with-photo-yes-img {
+    height: 3px;
+    left: 9px;
+    position: absolute;
+    top: 15px;
+    width: 15px;
+}
+
+.sign-up-page-pet-with-photo-yes-next {
+    height: 570px;
+    left: 21px;
+    position: absolute;
+    top: 21px;
+    width: 305px;
+}
+
+.sign-up-page-pet-with-photo-yes-text-wrapper {
+    color: #000000;
+    font-family: "SF Compact Rounded-Semibold", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 288px;
+}
+
+.sign-up-page-pet-with-photo-yes-overlap-group1 {
+    background-color: #f9c983;
+    border-radius: 100px;
+    height: 49px;
+    left: 182px;
+    position: absolute;
+    top: 521px;
+    width: 119px;
+}
+
+.sign-up-page-pet-with-photo-yes-text-wrapper-2 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Bold", Helvetica;
+    font-size: 18px;
+    font-weight: 700;
+    left: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 13px;
+}
+
+.sign-up-page-pet-with-photo-yes-vector-2 {
+    height: 14px;
+    left: 293px;
+    position: absolute;
+    top: 22px;
+    width: 8px;
+}
+
+.sign-up-page-pet-with-photo-yes-name {
+    height: 53px;
+    left: 19px;
+    position: absolute;
+    top: 62px;
+    width: 281px;
+}
+
+.sign-up-page-pet-with-photo-yes-div-wrapper {
+    background-color: #f9c98373;
+    border-radius: 10px;
+    height: 53px;
+    position: relative;
+    width: 279px;
+}
+
+.sign-up-page-pet-with-photo-yes-enter-your-age {
+    color: transparent;
+    font-family: "SF Compact Rounded-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 15px;
+    width: 120px;
+}
+
+.sign-up-page-pet-with-photo-yes-span {
+    color: #6d7680;
+}
+
+.sign-up-page-pet-with-photo-yes-text-wrapper-3 {
+    color: #747070;
+}
+
+.sign-up-page-pet-with-photo-yes-overlap-wrapper {
+    height: 53px;
+    left: 19px;
+    position: absolute;
+    top: 126px;
+    width: 281px;
+}
+
+.sign-up-page-pet-with-photo-yes-text-wrapper-4 {
+    color: #6d7680;
+    font-family: "SF Compact Rounded-Semibold", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 15px;
+    width: 149px;
+}
+
+.sign-up-page-pet-with-photo-yes-overlap-group4-wrapper {
+    height: 53px;
+    left: 19px;
+    position: absolute;
+    top: 190px;
+    width: 281px;
+}
+
+.sign-up-page-pet-with-photo-yes-text-wrapper-5 {
+    color: #747070;
+    font-family: "SF Compact Rounded-Semibold", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 16px;
+    width: 167px;
+}
+
+.sign-up-page-pet-with-photo-yes-overlap-group5-wrapper {
+    height: 53px;
+    left: 18px;
+    position: absolute;
+    top: 259px;
+    width: 281px;
+}
+
+.sign-up-page-pet-with-photo-yes-text-wrapper-6 {
+    color: #6d7680;
+    font-family: "SF Compact Rounded-Semibold", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 13px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 15px;
+    width: 181px;
+}
+
+.sign-up-page-pet-with-photo-yes-overlap-group6-wrapper {
+    height: 137px;
+    left: 18px;
+    position: absolute;
+    top: 333px;
+    width: 281px;
+}
+
+.sign-up-page-pet-with-photo-yes-overlap-2 {
+    background-color: #f9c98373;
+    border-radius: 10px;
+    height: 137px;
+    position: relative;
+    width: 279px;
+}
+
+.sign-up-page-pet-with-photo-yes-text-wrapper-7 {
+    color: #747070;
+    font-family: "SF Compact Rounded-Semibold", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 13px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    width: 132px;
+}
+
+.sign-up-page-pet-with-photo-yes-status-bar {
+    height: 11px;
+    left: 24px;
+    position: absolute;
+    top: 10px;
+    width: 327px;
+}
+
+.sign-up-page-pet-with-photo-yes-right-side {
+    height: 11px;
+    left: 260px;
+    position: absolute;
+    top: 0;
+    width: 67px;
+}
+
+.sign-up-page-pet-with-photo-yes-battery {
+    height: 11px;
+    left: 42px;
+    position: absolute;
+    top: 0;
+    width: 24px;
+}
+
+.sign-up-page-pet-with-photo-yes-img-2 {
+    height: 11px;
+    left: 22px;
+    position: absolute;
+    top: 0;
+    width: 15px;
+}
+
+.sign-up-page-pet-with-photo-yes-icon-bar-chart {
+    height: 11px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 17px;
+}
+
+.sign-up-page-pet-with-photo-yes-left-side {
+    height: 11px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 28px;
+}
+
+.sign-up-page-pet-with-photo-yes-text {
+    height: 41px;
+    left: 24px;
+    position: absolute;
+    top: 112px;
+    width: 325px;
+}
+
+.sign-up-page-pet-with-photo-yes-h-1 {
+    color: #f9c983;
+    font-family: "SF Compact Rounded-Bold", Helvetica;
+    font-size: 34px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}
+
+.sign-up-page-pet-with-photo-yes-overlap-group8 {
+    background-image: url(../../../static/img/rectangle-26-1.svg);
+    background-size: 100% 100%;
+    height: 34px;
+    left: 24px;
+    position: absolute;
+    top: 49px;
+    width: 36px;
+}
+
+.sign-up-page-pet-with-photo-yes-arrow {
+    height: 11px;
+    left: 11px;
+    position: absolute;
+    top: 11px;
+    width: 14px;
+}
