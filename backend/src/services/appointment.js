@@ -1,6 +1,6 @@
-const {Worker, validate} = require("../models/worker");
+const {Worker} = require("../models/worker");
 const {BadRequest, NotFound, Created, Success} = require("../utils/results");
-const {Appointment, validate} = require("../models/appointment");
+const {Appointment} = require("../models/appointment");
 const sgMail = require('@sendgrid/mail');
 const {User} = require("../models/user");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
