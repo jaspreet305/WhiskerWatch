@@ -4,7 +4,7 @@ const {BadRequest, Success, NotFound, Created} = require("../utils/results");
 var bcrypt = require('bcrypt');
 const sgMail = require('@sendgrid/mail');
 const {Appointment} = require("../models/appointment");
-const {Pet, validate} = require("../models/pet");
+const {Pet} = require("../models/pet");
 const {createAppointment} = require("./appointment");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
