@@ -1,15 +1,33 @@
 import "./SignUp.css";
 import * as React from "react";
-import {useState} from "react";
-import axios from "axios";
+import {useContext, useEffect, useState} from "react";
+import axios from "../../axios";
+import {LoggedContext} from "../../utils/AuthContext";
+import {useNavigate} from "react-router-dom";
 
 export function SignUp() {
+    const navigate = useNavigate();
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [city, setCity] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [emailCorrect, setEmailCorrect] = useState(true);
+    const [isPasswordMatch, setIsPasswordMatch] = useState(true);
+    const [firstNameCorrect, setFirstNameCorrect] = useState(true);
+    const [lastNameCorrect, setLastNameCorrect] = useState(true);
+
+    const [loggedIn, setLoggedIn] = useContext(LoggedContext);
+
+    useEffect(() => {
+        if(loggedIn) {
+            navigate("/");
+        }
+    }, [loggedIn, navigate]);
+
+    const emailRegex =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -17,12 +35,30 @@ export function SignUp() {
         data.set("email", data.get("email").toLowerCase());
 
         if (password !== confirmPassword) {
+            setIsPasswordMatch(false);
+            console.log("Passwords match: ", isPasswordMatch);
             return;
+        }
+
+        if (!emailRegex.test(email)) {
+            setEmailCorrect(false);
+        } else {
+            setEmailCorrect(true);
+        }
+
+        if (!firstName) {
+            setFirstNameCorrect(false);
+        }
+
+        if (!lastName) {
+            setLastNameCorrect(false);
         }
 
         try {
             const response = await axios.post("user/signup", data);
             localStorage.setItem("userToken", response.data);
+            setLoggedIn(true);
+            navigate('/');
             console.log(response);
         } catch (err) {
             if (err.response?.status === 409) {

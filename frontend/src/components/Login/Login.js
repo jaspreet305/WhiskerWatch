@@ -1,15 +1,26 @@
 import "./Login.css";
 import * as React from "react";
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {Divider} from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 import {Typography, Button} from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import axios from "axios";
+import axios from "../../axios";
+import {LoggedContext} from "../../utils/AuthContext";
+import {useNavigate} from "react-router-dom";
 
 export function Login() {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [authenticated, setAuthenticated] = useState(null);
+    const [loggedIn, setLoggedIn] = useContext(LoggedContext);
+
+    useEffect(() => {
+        if(loggedIn) {
+            navigate("/");
+        }
+    }, [loggedIn, navigate]);
 
     const handleSignIn = async (event) => {
         event.preventDefault();
@@ -18,27 +29,14 @@ export function Login() {
         try {
             const response = await axios.post("user/login", data);
             localStorage.setItem("userToken", response.data);
+            setAuthenticated(true);
+            setLoggedIn(true);
+            navigate('/');
             console.log(response.data);
         } catch (err) {
+            setAuthenticated(false);
             console.log(err);
         }
-    };
-
-    const handleSignIn2 = async (e) => {
-        e.preventDefault();
-        const data = {
-            email: email,
-            password: password,
-        };
-        const response = await fetch("/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        });
-        const result = await response.json();
-        // do something with the response data
     };
 
     return (
