@@ -116,5 +116,4 @@ exports.edit = edit;
 exports.deleteWorker = deleteWorker;
 exports.findAll = findAll;
 exports.acceptAppointment = acceptAppointment;
-exports.declineAppointment = declineAppointment;
 exports.getAllAppointments = getAllAppointments;
