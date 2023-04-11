@@ -1,5 +1,5 @@
 const ObjectId = require('mongoose').Types.ObjectId;
-const {User, validate_auth} = require("../models/user");
+const {User} = require("../models/user");
 const {BadRequest, Success, NotFound, Created} = require("../utils/results");
 var bcrypt = require('bcrypt');
 const sgMail = require('@sendgrid/mail');
@@ -30,8 +30,6 @@ const create = async (user) => {
 }
 
 const login = async (user) => {
-    if (validate_auth(user).error)
-        return BadRequest("Invalid Credentials");
     let u = await User.findOne({email: user.email})
     if (!u)
         return NotFound("User with this email was not found");
@@ -45,9 +43,6 @@ const login = async (user) => {
 }
 
 const edit = async (id, user) => {
-    if (validate(user).error)
-        return BadRequest("Invalid User");
-
     if (!id)
         return BadRequest("User id not found");
     const u = await User.findByIdAndUpdate(id, user, {new: true});

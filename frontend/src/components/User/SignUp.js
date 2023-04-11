@@ -20,11 +20,11 @@ export function SignUp() {
 
     const [loggedIn, setLoggedIn] = useContext(LoggedContext);
 
-    useEffect(() => {
-        if(loggedIn) {
-            navigate("/");
-        }
-    }, [loggedIn, navigate]);
+    // useEffect(() => {
+    //     if(loggedIn) {
+    //         navigate("/");
+    //     }
+    // }, [loggedIn, navigate]);
 
     const emailRegex =
         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
@@ -58,7 +58,7 @@ export function SignUp() {
             const response = await axios.post("user/signup", data);
             localStorage.setItem("userToken", response.data);
             setLoggedIn(true);
-            navigate('/');
+            navigate('/login');
             console.log(response);
         } catch (err) {
             if (err.response?.status === 409) {

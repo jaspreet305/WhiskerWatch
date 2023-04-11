@@ -63,15 +63,6 @@ function validateUser(user) {
     return schema.validate(user);
 }
 
-function validate_auth(req) {
-    const schema = Joi.object({
-        email: Joi.string().min(2).max(255).required().email(),
-        password: Joi.string().min(2).max(1024).required()
-    })
-    return schema.validate(req);
-}
-
 exports.User = User;
 exports.userSchema = userSchema;
 exports.validate = validateUser;
-exports.validate_auth = validate_auth;
