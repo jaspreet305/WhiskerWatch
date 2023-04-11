@@ -5,8 +5,23 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useEffect, useState } from "react";
+import axios from "../../axios";
 
 export function PetProfile() {
+
+    const [pet, setPet] = useState({});
+
+    useEffect(() => { 
+        axios.get("pet/64355e7872a61b3b2efbab56") // pet id hard coded for now. waiting for home page to be implemented
+            .then((response) => {
+                console.log(response);
+                setPet(response?.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
 
     return (
         <Container className="profile-page-container">
@@ -17,35 +32,35 @@ export function PetProfile() {
             </Grid>
             <Grid className="pet-info">
                 <div className="pet-name">
-                    <h1>Beast</h1>
+                    <h1>{pet.name}</h1>
                 </div>
                 <div className="pet-breed">
-                    <h2>Shih Tzu</h2>
+                    <h2>{pet.breed}</h2>
                 </div>
                 <div className="info-row">
                     <Grid className="specific-info">
                         <h3>AGE</h3>
-                        <p>12 years</p>
+                        <p>{pet.age}</p>
                     </Grid>
                     <Grid className="specific-info">
                         <h3>HEALTH</h3>
-                        <p>Fit</p>
+                        <p>{pet.health?.charAt(0).toUpperCase() + pet?.health?.slice(1)}</p>
                     </Grid>
                     <Grid className="specific-info">
                         <h3>SEX</h3>
-                        <p>Male</p>
+                        <p>{pet.sex?.charAt(0).toUpperCase() + pet?.sex?.slice(1)}</p>
                     </Grid>
                 </div>
                 <div className="info-row">
                     <Grid>
                         <h3>LOCATION</h3>
-                        <p>Montreal, Quebec</p>
+                        <p>{pet.location}</p>
                     </Grid>
                 </div>
                 <div className="info-row">
                     <Grid>
                         <h3>DETAILS</h3>
-                        <p>Beast enjoys the company of humans. He can sometimes be aggressive around other dogs, especially chihuahuas. Also, he will get really mad if you try to treat him like a child. He will like you if you respect him.</p>
+                        <p>{pet.details}</p>
                     </Grid>
                 </div>
                 <div className="info-row">
@@ -53,7 +68,7 @@ export function PetProfile() {
                         <h3>OWNER</h3>
                         <div className="owner">
                             <AccountCircleIcon className="owner-icon" />
-                            <p> Noah Assayag </p>
+                            <p> {pet.owner?.firstName} {pet.owner?.lastName} </p>
                         </div>
                     </Grid>
                 </div>
