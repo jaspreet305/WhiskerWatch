@@ -1,6 +1,7 @@
 import "./SignUp.css";
 import * as React from "react";
-import { useState } from "react";
+import {useState} from "react";
+import axios from "axios";
 
 export function SignUp() {
     const [firstName, setFirstName] = useState("");
@@ -9,17 +10,38 @@ export function SignUp() {
     const [city, setCity] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    
-    const handleSignUp = (e) => {
-        e.preventDefault();
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        data.set("email", data.get("email").toLowerCase());
+
+        if (password !== confirmPassword) {
+            return;
+        }
+
+        try {
+            const response = await axios.post("user/signup", data);
+            localStorage.setItem("userToken", response.data);
+            console.log(response);
+        } catch (err) {
+            if (err.response?.status === 409) {
+                console.log(err);
+            }
+        }
+
+        console.log({
+            email: data.get("email"),
+            password: data.get("password"),
+        });
     };
 
     return (
         <div className="SignUpPage">
-            <h2 className="SignUpTitle" style={{ fontWeight: "bold" }}>
+            <h2 className="SignUpTitle" style={{fontWeight: "bold"}}>
                 Sign Up
             </h2>
-            <form onSubmit={handleSignUp}>
+            <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="firstName">First Name</label>
                     <input

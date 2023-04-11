@@ -1,9 +1,9 @@
 const ObjectId = require('mongoose').Types.ObjectId;
-const {User, validate, validate_auth} = require("../models/user");
+const {User, validate_auth} = require("../models/user");
 const {BadRequest, Success, NotFound, Created} = require("../utils/results");
 var bcrypt = require('bcrypt');
 const sgMail = require('@sendgrid/mail');
-const {Appointment, validate} = require("../models/appointment");
+const {Appointment} = require("../models/appointment");
 const {Pet, validate} = require("../models/pet");
 const {createAppointment} = require("./appointment");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
