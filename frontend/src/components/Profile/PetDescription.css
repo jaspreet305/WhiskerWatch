@@ -18,18 +18,18 @@
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 2px 2px 10px #00000040, -2px -2px 10px #00000040;
-    height: 516px;
+    height: 606px;
     left: 28px;
     position: absolute;
     top: 196px;
-    width: 315px;
+    width: 335px;
 }
 
 .sign-up-page-pet-with-photo-yes-screen-overlap-group-wrapper {
     height: 37px;
     left: 131px;
     position: absolute;
-    top: 473px;
+    top: 543px;
     width: 37px;
 }
 
@@ -144,7 +144,7 @@
     height: 53px;
     left: 18px;
     position: absolute;
-    top: 188px;
+    top: 184px;
     width: 281px;
 }
 
@@ -164,9 +164,9 @@
 
 .sign-up-page-pet-with-photo-yes-screen-overlap-group4-wrapper {
     height: 53px;
-    left: 17px;
+    left: 18px;
     position: absolute;
-    top: 257px;
+    top: 244px;
     width: 281px;
 }
 
@@ -185,10 +185,26 @@
 }
 
 .sign-up-page-pet-with-photo-yes-screen-overlap-group5-wrapper {
-    height: 137px;
-    left: 17px;
+    height: 53px;
+    left: 18px;
     position: absolute;
-    top: 331px;
+    top: 304px;
+    width: 281px;
+}
+
+.sign-up-page-pet-with-photo-yes-screen-overlap-group100-wrapper {
+    height: 53px;
+    left: 18px;
+    position: absolute;
+    top: 364px;
+    width: 281px;
+}
+
+.sign-up-page-pet-with-photo-yes-screen-overlap-group101-wrapper {
+    height: 53px;
+    left: 18px;
+    position: absolute;
+    top: 424px;
     width: 281px;
 }
 
@@ -321,4 +337,11 @@
     position: absolute;
     top: 11px;
     width: 14px;
+}
+
+.pet-type-dropdown {
+    padding: 10px;
+    border: 2px solid #f9c983;
+    font-size: 16px;
+    width: 202px;
 }

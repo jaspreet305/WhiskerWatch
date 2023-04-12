@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const {appointmentSchema} = require("./appointment");
-const Joi = require("joi");
 
 const petSchema = new mongoose.Schema({
     owner: {
@@ -10,10 +9,11 @@ const petSchema = new mongoose.Schema({
     },
     name: {
         type: String,
+        enum: ["male", "female"],
     },
     petType: {
         type: String,
-        enum: ["cat", "dog"],
+        enum: ["cat", "dog", "bird"],
     },
     breed: {
         type: String
@@ -35,7 +35,13 @@ const petSchema = new mongoose.Schema({
     details: {
         type: String
     },
-    image: {
+    gender: {
+        type: String,
+    },
+    petDetails: {
+        type: String,
+    },
+    date: {
         type: String,
     },
     appointments: [appointmentSchema],
@@ -43,14 +49,5 @@ const petSchema = new mongoose.Schema({
 
 const Pet = mongoose.model("Pet", petSchema);
 
-function validatePet(Pet) {
-    const schema = Joi.object({
-        owner: Joi.required(),
-        petType: Joi.required(),
-    }).options({allowUnknown: true});
-    return schema.validate(Pet);
-}
-
 exports.Pet = Pet;
 exports.petSchema = petSchema;
-exports.validate = validatePet;

@@ -6,10 +6,6 @@ const {User} = require("../models/user");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const createAppointment = async (appointment) => {
-    if (validate(appointment).error) {
-        return BadRequest("Invalid Appointment");
-    }
-
     const user = await User.findById(appointment.user);
     if (!user) {
         return NotFound("User not found");

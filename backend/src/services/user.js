@@ -21,8 +21,6 @@ const findAll = async () => {
 };
 
 const create = async (user) => {
-    if (validate(user).error)
-        return BadRequest("Invalid User");
     let u = await new User(user);
     const salt = await bcrypt.genSalt(10);
     u.password = await bcrypt.hash(user.password, salt);
@@ -32,8 +30,6 @@ const create = async (user) => {
 }
 
 const login = async (user) => {
-    if (validate_auth(user).error)
-        return BadRequest("Invalid Credentials");
     let u = await User.findOne({email: user.email})
     if (!u)
         return NotFound("User with this email was not found");
@@ -47,9 +43,6 @@ const login = async (user) => {
 }
 
 const edit = async (id, user) => {
-    if (validate(user).error)
-        return BadRequest("Invalid User");
-
     if (!id)
         return BadRequest("User id not found");
     const u = await User.findByIdAndUpdate(id, user, {new: true});
@@ -72,9 +65,6 @@ const deleteUser = async (id) => {
 }
 
 const requestAppointment = async (appointment) => {
-    if (validate(appointment).error)
-        return BadRequest("Invalid Appointment");
-
     // Check if pet exists and belongs to the user
     const pet = await Pet.findById(appointment.pet);
     if (!pet || pet.owner.id !== appointment.user)

@@ -1,65 +1,119 @@
-import React from "react";
-import "./PetDescription.css";
+import React, { useState } from 'react';
+import './PetDescription.css';
+import { FormControl } from '@mui/material';
+import axios from '../../axios';
+import { useNavigate } from 'react-router-dom';
 
 export const PetDescription = () => {
+    const navigate = useNavigate();
+
+    const [formValues, setFormValues] = useState({
+        name: '',
+        petType: '',
+        gender: '',
+        dateOfBirth: '',
+        petDetails: '',
+        age: '',
+        healthStatus: '',
+    });
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        let data = new FormData(event.currentTarget);
+
+        try {
+            const response = await axios.post('/pet/', data, {
+                headers: {
+                    'x-auth-token': `${localStorage.getItem('userToken')}`,
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+            navigate('/home-page');
+            console.log('RESPONSE', response);
+
+            console.log(response);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormValues((prevState) => ({ ...prevState, [name]: value }));
+    };
+
     return (
         <div className={"sign-up-page-pet-with-photo-yes-screen-div"}>
             <div className={"sign-up-page-pet-with-photo-yes-screen-div-2"}>
                 <div className={"sign-up-page-pet-with-photo-yes-screen-overlap"}>
-                    <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group-wrapper"}>
-                        <div
-                            className={"sign-up-page-pet-with-photo-yes-screen-overlap-group"}
-                            style={{
-                                backgroundImage: "url(/img/vector-3.svg)",
-                            }}
-                        >
-                            <img className={"sign-up-page-pet-with-photo-yes-screen-vector"} src={"/img/vector-4.svg"} />
-                            <img className={"sign-up-page-pet-with-photo-yes-screen-img"} src={"/img/vector-5.svg"} />
-                        </div>
-                    </div>
                     <div className={"sign-up-page-pet-with-photo-yes-screen-next"}>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-text-wrapper"}>Add pet</div>
                     </div>
-                    <img className={"sign-up-page-pet-with-photo-yes-screen-vector-2"} src={"/img/vector.svg"} />
-                    <div className={"sign-up-page-pet-with-photo-yes-screen-name"}>
-                        <div className={"sign-up-page-pet-with-photo-yes-screen-div-wrapper"}>
-                            <div className={"sign-up-page-pet-with-photo-yes-screen-text-wrapper-2"}>Enter pet name</div>
+                    <img className={"sign-up-page-pet-with-photo-yes-screen-vector-2"} src={"/img/vector.svg"}/>
+                    <FormControl onSubmit={handleSubmit} component='form'>
+                        <div className={"sign-up-page-pet-with-photo-yes-screen-name"}>
+                            <input type="text" name={"name"} placeholder="Enter pet name" onChange={handleChange} required/>
                         </div>
-                    </div>
-                    <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-wrapper"}>
-                        <div className={"sign-up-page-pet-with-photo-yes-screen-div-wrapper"}>
-                            <div className={"sign-up-page-pet-with-photo-yes-screen-text-wrapper-3"}>Enter pet type</div>
+                        <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-wrapper"}>
+                            <select name="petType" className="pet-type-dropdown" onChange={handleChange} required>
+                                <option value="">Select pet type</option>
+                                <option value="dog">Dog</option>
+                                <option value="cat">Cat</option>
+                                <option value="fish">Fish</option>
+                                <option value="bird">Bird</option>
+                            </select>
                         </div>
-                    </div>
-                    <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group3-wrapper"}>
-                        <div className={"sign-up-page-pet-with-photo-yes-screen-div-wrapper"}>
-                            <div className={"sign-up-page-pet-with-photo-yes-screen-text-wrapper-4"}>Enter pet gender</div>
+                        <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group3-wrapper"}>
+                            <select name="petType" className="pet-type-dropdown" onChange={handleChange} required>
+                                <option value="">Select pet type</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
                         </div>
-                    </div>
-                    <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group4-wrapper"}>
-                        <div className={"sign-up-page-pet-with-photo-yes-screen-div-wrapper"}>
-                            <div className={"sign-up-page-pet-with-photo-yes-screen-text-wrapper-5"}>Date of birth</div>
+                        <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group4-wrapper"}>
+                            <input type="text" name="date" placeholder="Enter pet date of birth" onChange={handleChange} pattern="\d{4}[-/]\d{2}[-/]\d{2}" required />
                         </div>
-                    </div>
-                    <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group5-wrapper"}>
-                        <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-2"}>
-                            <div className={"sign-up-page-pet-with-photo-yes-screen-text-wrapper-6"}>Pet Details</div>
+                        <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group5-wrapper"}>
+                            <input type="text" name={"petDetails"}
+                                   placeholder="Enter pet details" onChange={handleChange} required/>
                         </div>
-                    </div>
-                </div>
-                <div className={"sign-up-page-pet-with-photo-yes-screen-status-bar"}>
-                    <div className={"sign-up-page-pet-with-photo-yes-screen-right-side"}>
-                        <img className={"sign-up-page-pet-with-photo-yes-screen-battery"} src={"/img/battery.png"} />
-                        <img className={"sign-up-page-pet-with-photo-yes-screen-img-2"} src={"/img/wifi-6.svg"} />
-                        <img className={"sign-up-page-pet-with-photo-yes-screen-icon-bar-chart"} src={"/img/mobile-signal-2.svg"} />
-                    </div>
-                    <img className={"sign-up-page-pet-with-photo-yes-screen-left-side"} src={"/img/left-side.png"} />
+                        <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group100-wrapper"}>
+                            <input type="text" name={"age"}
+                                   placeholder="Enter pet age" onChange={handleChange} pattern="^(1[0-9]{1,1}|[1-9][0-9]{0,1}|120)$" required/>
+                        </div>
+                        <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group101-wrapper"}>
+                            <select name="petType" className="pet-type-dropdown" onChange={handleChange} required>
+                                <option value="" style={{color: "#f9c983"}}>Select pet type</option>
+                                <option value="fit">Fit</option>
+                                <option value="healthy">Healthy</option>
+                                <option value="sick">Sick</option>
+                                <option value="injured">Injured</option>
+                            </select>
+                        </div>
+                        <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group-wrapper"}>
+                            <button style={{background: "none", border: "none"}} type={"submit"}>
+                                <div
+                                    className={"sign-up-page-pet-with-photo-yes-screen-overlap-group"}
+                                    style={{
+                                        backgroundImage: "url(/img/vector-3.svg)",
+                                    }}
+                                >
+                                    <img className={"sign-up-page-pet-with-photo-yes-screen-vector"}
+                                         src={"/img/vector-4.svg"}/>
+                                    <img className={"sign-up-page-pet-with-photo-yes-screen-img"}
+                                         src={"/img/vector-5.svg"}/>
+                                </div>
+                            </button>
+                        </div>
+                    </FormControl>
                 </div>
                 <div className={"sign-up-page-pet-with-photo-yes-screen-text"}>
                     <h1 className={"sign-up-page-pet-with-photo-yes-screen-h-1"}>Pet description</h1>
                 </div>
                 <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group6"}>
-                    <div className={"sign-up-page-pet-with-photo-yes-screen-text-wrapper-7"}>Next</div>
+                    <a href={"/search"}>
+                        <div className={"sign-up-page-pet-with-photo-yes-screen-text-wrapper-7"}>Next</div>
+                    </a>
                 </div>
                 <div
                     className={"sign-up-page-pet-with-photo-yes-screen-overlap-group7"}
@@ -67,7 +121,9 @@ export const PetDescription = () => {
                         backgroundImage: "url(/img/rectangle-26-1.svg)",
                     }}
                 >
-                    <img className={"sign-up-page-pet-with-photo-yes-screen-arrow"} src={"/img/arrow-1-1.svg"} />
+                    <a href={"/home-page"}>
+                        <img className={"sign-up-page-pet-with-photo-yes-screen-arrow"} src={"/img/arrow-1-1.svg"}/>
+                    </a>
                 </div>
             </div>
         </div>
