@@ -19,26 +19,15 @@ const findOne = async (id) => {
     return Success(pet);
 };
 
-const create = async (pet, req, image) => {
+const create = async (pet) => {
     pet.appointment = new Date();
-    if (image) {
-        pet.image = `${req.protocol}://${req.get("host")}/images/${
-            image.filename
-        }`;
-    }
     let p = await new Pet(pet);
     await p.save();
     return Created(p);
 };
 
-const edit = async (id, pet, req, image) => {
+const edit = async (id, pet) => {
     if (!id) return BadRequest("Pet id not found");
-
-    if (image) {
-        pet.image = `${req.protocol}://${req.get("host")}/images/${
-            image.filename
-        }`;
-    }
     const p = await Pet.findByIdAndUpdate(id, pet, {new: true});
     if (!p) return NotFound("Error while updating the pet");
     return Success(p);
