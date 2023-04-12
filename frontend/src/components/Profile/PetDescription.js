@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './PetDescription.css';
-import { FormControl } from '@mui/material';
+import {FormControl} from '@mui/material';
 import axios from '../../axios';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 export const PetDescription = () => {
     const navigate = useNavigate();
@@ -28,7 +28,7 @@ export const PetDescription = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-            navigate('/home-page');
+            navigate('/home-page', {state: {petType: formValues.petType}});
             console.log('RESPONSE', response);
 
             console.log(response);
@@ -38,8 +38,8 @@ export const PetDescription = () => {
     };
 
     const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormValues((prevState) => ({ ...prevState, [name]: value }));
+        const {name, value} = event.target;
+        setFormValues((prevState) => ({...prevState, [name]: value}));
     };
 
     return (
@@ -52,7 +52,8 @@ export const PetDescription = () => {
                     <img className={"sign-up-page-pet-with-photo-yes-screen-vector-2"} src={"/img/vector.svg"}/>
                     <FormControl onSubmit={handleSubmit} component='form'>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-name"}>
-                            <input type="text" name={"name"} placeholder="Enter pet name" onChange={handleChange} required/>
+                            <input type="text" name={"name"} placeholder="Enter pet name" onChange={handleChange}
+                                   required/>
                         </div>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-wrapper"}>
                             <select name="petType" className="pet-type-dropdown" onChange={handleChange} required>
@@ -71,7 +72,8 @@ export const PetDescription = () => {
                             </select>
                         </div>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group4-wrapper"}>
-                            <input type="text" name="date" placeholder="Enter pet date of birth" onChange={handleChange} pattern="\d{4}[-/]\d{2}[-/]\d{2}" required />
+                            <input type="text" name="date" placeholder="Enter pet date of birth" onChange={handleChange}
+                                   pattern="\d{4}[-/]\d{2}[-/]\d{2}" required/>
                         </div>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group5-wrapper"}>
                             <input type="text" name={"petDetails"}
@@ -79,7 +81,8 @@ export const PetDescription = () => {
                         </div>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group100-wrapper"}>
                             <input type="text" name={"age"}
-                                   placeholder="Enter pet age" onChange={handleChange} pattern="^(1[0-9]{1,1}|[1-9][0-9]{0,1}|120)$" required/>
+                                   placeholder="Enter pet age" onChange={handleChange}
+                                   pattern="^(1[0-9]{1,1}|[1-9][0-9]{0,1}|120)$" required/>
                         </div>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group101-wrapper"}>
                             <select name="petType" className="pet-type-dropdown" onChange={handleChange} required>
