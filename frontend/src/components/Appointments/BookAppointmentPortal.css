@@ -81,9 +81,10 @@
 }
 
 .book-appointment-portal-calendar-april {
-  align-items: flex-start;
+  align-items: center;
   background-color: #ffffff;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   gap: 10px;
   height: 317px;
@@ -344,4 +345,67 @@
   position: absolute;
   top: 5px;
   width: 77px;
+}
+
+/* Change the background color of the selected date */
+.react-datepicker__day--selected {
+  background-color: #F9C983 !important;
+}
+
+/* Change the background color of the hovered date */
+.react-datepicker__day--keyboard-selected, .react-datepicker__day:hover {
+  background-color: #f9ca83b4 !important;
+}
+
+/* Change the color of the month and year navigation arrows */
+.react-datepicker__navigation--previous, .react-datepicker__navigation--next {
+  border-color: #F9C983 !important;
+}
+
+.react-datepicker__header {
+  background-color: white !important;
+}
+
+.book-appointment-portal-time-selection {
+  width: 50%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.time-select__control {
+  background-color: #f8f8f8;
+  border: none;
+  border-radius: 19px;
+  padding: 5px 15px;
+  min-height: 35px;
+  box-shadow: none;
+}
+
+.time-select__control:hover {
+  border-color: inherit;
+}
+
+.time-select__menu {
+  margin-top: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.time-select__option {
+  padding: 6px 12px;
+}
+
+.time-select__option:hover,
+.time-select__option:active {
+  background-color: #f8f8f8;
+}
+
+.appointments-arrow {
+  height: 11px;
+  left: 20px;
+  position: absolute;
+  top: 11px;
+  width: 14px;
 }
