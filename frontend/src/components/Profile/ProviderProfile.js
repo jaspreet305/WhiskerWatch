@@ -65,7 +65,7 @@ export function ProviderProfile() {
                     </Grid>
                 </div>
                 <div>
-                    <Button className="contact-provider-button" variant="contained" >
+                    <Button href="/book-appointment" className="contact-provider-button" variant="contained" >
                         Contact Provider
                     </Button>
                 </div>

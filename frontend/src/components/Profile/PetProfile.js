@@ -23,6 +23,12 @@ export function PetProfile() {
             });
     }, []);
 
+    const email = "test@gmail.com";
+
+    const handleContactButton = () => {
+        window.location.href = `mailto:${email}`;
+    };
+
     return (
         <Container className="profile-page-container">
             <Grid className="pet-picture">
@@ -73,7 +79,7 @@ export function PetProfile() {
                     </Grid>
                 </div>
                 <div>
-                    <Button className="contact-owner-button" variant="contained" >
+                    <Button onClick={handleContactButton} className="contact-owner-button" variant="contained" >
                         Contact Owner
                     </Button>
                 </div>

@@ -25,9 +25,8 @@ const create = async (pet) => {
     return Created(p);
 };
 
-const edit = async (id, pet, req) => {
+const edit = async (id, pet) => {
     if (!id) return BadRequest("Pet id not found");
-
     const p = await Pet.findByIdAndUpdate(id, pet, {new: true});
     if (!p) return NotFound("Error while updating the pet");
     return Success(p);

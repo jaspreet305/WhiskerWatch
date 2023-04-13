@@ -34,7 +34,7 @@ router.post('/', auth, async (req, res) => {
     try {
         let pet = req.body;
         pet.owner = {id: req.user._id, firstName: req.user.firstName, lastName: req.user.lastName};
-        const result = await petService.create(pet, req);
+        const result = await petService.create(pet);
         res.status(result.status).send(result.data);
     } catch (e) {
         res.status(500).send(e.message);
@@ -45,7 +45,7 @@ router.put('/:id', auth, async (req, res) => {
     try {
         let pet = req.body;
         pet.owner = {id: req.user._id, firstName: req.user.firstName, lastName: req.user.lastName};
-        const result = await petService.edit(req.params.id, pet, req);
+        const result = await petService.edit(req.params.id, pet);
         res.status(result.status).send(result.data);
     } catch (e) {
         res.status(500).send(e.message);
