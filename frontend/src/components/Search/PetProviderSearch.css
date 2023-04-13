@@ -24,8 +24,8 @@
 }
 
 .pet-provider-search-explore {
-  color: #ffffff;
-  font-family: "Montserrat", Helvetica;
+  color: #F9C983;
+  font-family: "SF Compact Rounded", Helvetica;
   font-size: 25px;
   font-weight: 800;
   left: 0;
@@ -38,12 +38,14 @@
 .pet-provider-search-rectangle {
   background-color: #ffffff;
   border-radius: 25px;
-  box-shadow: 0px 4px 4px #ff8b6a80;
+  box-shadow: 0 4px 4px #ff8b6a80;
   height: 52px;
   left: 12px;
   position: absolute;
-  top: 25px;
+  top: 35px;
   width: 313px;
+  border: none !important;
+  text-align: center;
 }
 
 .pet-provider-search-search {
@@ -55,14 +57,14 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 43px;
+  top: 53px;
 }
 
 .pet-provider-search-icon-search {
   height: 24px;
   left: 33px;
   position: absolute;
-  top: 44px;
+  top: 52px;
   width: 24px;
 }
 
@@ -77,6 +79,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .pet-provider-search-overlap-unselected {
@@ -89,6 +92,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .pet-provider-search-text-wrapper {
@@ -278,6 +282,7 @@
   height: 108px;
   left: 15px;
   position: absolute;
+  object-fit: cover;
   top: 24px;
   width: 135px;
 }

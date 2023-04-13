@@ -31,7 +31,7 @@ function App() {
                 <Route path="/home-page" element={<HomePage />} />
                 <Route path="/pet-description" element={<PetDescription />} />
                 <Route path="/provider-description" element={<ProviderDescription />} />
-                <Route path="/search" element={<PetProviderSearch />} />
+                <Route path="/search/:workerType?" element={<PetProviderSearch />} />
                 <Route path="/book-appointment" element={<BookAppointmentPortal />} />
             </Routes>
           </BrowserRouter>
