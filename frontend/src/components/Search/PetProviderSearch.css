@@ -17,8 +17,9 @@
 .pet-provider-search-overlap {
   height: 77px;
   left: 20px;
-  position: absolute;
-  top: 75px;
+  position: relative;
+  margin-top: 55px;
+  margin-bottom: 40px;
   width: 325px;
 }
 
@@ -65,15 +66,29 @@
   width: 24px;
 }
 
-.pet-provider-search-overlap-group5 {
+.pet-provider-search-overlap-selected {
   background-color: #ffb228;
   border-radius: 10px;
   box-shadow: 0px 4px 4px #00000040;
   height: 60px;
   left: 144px;
-  position: absolute;
   top: 208px;
   width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pet-provider-search-overlap-unselected {
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  height: 60px;
+  left: 23px;
+  top: 208px;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pet-provider-search-text-wrapper {
@@ -84,18 +99,24 @@
   left: 21px;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
   top: 21px;
 }
 
-.pet-provider-search-overlap-group2 {
-  background-color: #e5e5e5;
-  border-radius: 10px;
-  height: 60px;
-  left: 23px;
-  position: absolute;
-  top: 208px;
-  width: 90px;
+.pet-provider-search-overlap-buttons {
+  border: 1px none;
+  height: auto;
+  position: relative;
+  display: flex;
+  width: 100%;
+  place-content: space-evenly;
+}
+
+.pet-provider-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
 }
 
 .pet-provider-search-text-wrapper-2 {
@@ -108,16 +129,6 @@
   line-height: normal;
   position: absolute;
   top: 21px;
-}
-
-.pet-provider-search-overlap-group4 {
-  background-color: #e5e5e5;
-  border-radius: 10px;
-  height: 60px;
-  left: 264px;
-  position: absolute;
-  top: 210px;
-  width: 90px;
 }
 
 .pet-provider-search-text-wrapper-3 {
@@ -137,10 +148,9 @@
   border-radius: 25px;
   box-shadow: 0px 4px 4px #00000040;
   height: 171px;
-  left: 25px;
-  position: absolute;
-  top: 318px;
   width: 326px;
+  position: relative;
+  margin-bottom: 20px;
 }
 
 .pet-provider-search-text-wrapper-4 {
