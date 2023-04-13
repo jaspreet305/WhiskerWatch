@@ -10,27 +10,32 @@ import { PetDescription } from "./components/Profile/PetDescription";
 import { ProviderDescription } from "./components/Profile/ProviderDescription";
 import { PetProviderSearch } from "./components/Search/PetProviderSearch";
 import { BookAppointmentPortal } from "./components/Appointments/BookAppointmentPortal";
+import { Login } from "./components/Login/Login";
+
 import './App.css';
+import AuthContext from "./utils/AuthContext";
 
 function App() {
   return (
-      <BrowserRouter>
-        <Routes>
-          {/* <Route path="/" element={<Layout />}> */}
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/pet-profile" element={<PetProfile />} />
-        <Route path="/provider-profile" element={<ProviderProfile />} />
-        <Route path="/appointments" element={<Appointments />} />
-        <Route path="/logged-out" element={<LoggedOut />} />
-        <Route path="/appointments-screen" element={<AppointmentsScreen />} />
-        <Route path="/home-page" element={<HomePage />} />
-        <Route path="/pet-description" element={<PetDescription />} />
-        <Route path="/provider-description" element={<ProviderDescription />} />
-        <Route path="/search" element={<PetProviderSearch />} />
-        <Route path="/book-appointment" element={<BookAppointmentPortal />} />
-          {/* </Route> */}
-        </Routes>
-      </BrowserRouter>
+      <AuthContext>
+          <BrowserRouter>
+            <Routes>
+                {/* <Route path="/" element={<Layout />}> */}
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/pet-profile" element={<PetProfile />} />
+                <Route path="/provider-profile" element={<ProviderProfile />} />
+                <Route path="/appointments" element={<Appointments />} />
+                <Route path="/logged-out" element={<LoggedOut />} />
+                <Route path="/appointments-screen" element={<AppointmentsScreen />} />
+                <Route path="/home-page" element={<HomePage />} />
+                <Route path="/pet-description" element={<PetDescription />} />
+                <Route path="/provider-description" element={<ProviderDescription />} />
+                <Route path="/search" element={<PetProviderSearch />} />
+                <Route path="/book-appointment" element={<BookAppointmentPortal />} />
+            </Routes>
+          </BrowserRouter>
+      </AuthContext>
   );
 }
 
