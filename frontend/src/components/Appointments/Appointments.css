@@ -301,7 +301,7 @@
     font-weight: 700;
     left: 0;
     letter-spacing: 0;
-    line-height: normal;
+    line-height: 0.90;
     position: absolute;
     top: 0;
 }
@@ -328,6 +328,11 @@
     text-align: center;
     top: 16px;
     width: 78px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 1;
 }
 
 .appointments-overlap-group2 {
@@ -371,3 +376,12 @@
     top: 11px;
     width: 14px;
 }
+
+.appointments-button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 200px; /* Adjust this value based on your design */
+    margin: 0 auto; /* Center the buttons */
+  }
+  
