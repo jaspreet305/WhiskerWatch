@@ -1,18 +1,30 @@
 import React from "react";
 import "./Appointments.css";
+import axios from 'axios';
+import { useNavigate }  from "react-router-dom";
+
 
 export const Appointments = () => {
+    const appointmentId = `id/`;
+    const cancelAppointment = async (appointmentId) => {
+        try {
+            const response = await axios.delete(`id/appointmentId`);
+            console.log('Appointment successfully canceled:', response.data);
+        } catch (error) {
+            console.error('Error canceling appointment:', error.message);
+        }
+    };
+    const navigate = useNavigate();
+    const handleModifyClick = () => {
+        navigate("/book-appointment");
+      };
+    const handleArrowClick = () => {
+        navigate("/appointments-screen");
+      };
+
     return (
         <div className={"appointments-div"}>
             <div className={"appointments-div-2"}>
-                <div className={"appointments-status-bar"}>
-                    <div className={"appointments-right-side"}>
-                        <img className={"appointments-battery"} src={"/img/battery.png"} />
-                        <img className={"appointments-img"} src={"/img/wifi-3.svg"} />
-                        <img className={"appointments-icon-bar-chart"} src={"/img/mobile-signal.svg"} />
-                    </div>
-                    <img className={"appointments-left-side"} src={"/img/left-side.png"} />
-                </div>
                 <div className={"appointments-overlap-group"}>
                     <img className={"appointments-vector"} src={"/img/vector.svg"} />
                     <div className={"appointments-rectangle"} />
@@ -47,22 +59,22 @@ export const Appointments = () => {
                 <div className={"appointments-text"}>
                     <h1 className={"appointments-h-1"}>Appointment Details</h1>
                 </div>
-                <div className={"appointments-overlap"}>
+                <div className={"appointments-overlap"} onClick={() => cancelAppointment(appointmentId)}>
                     <div className={"appointments-text-wrapper-5"}>Cancel</div>
                 </div>
-                <div className={"appointments-overlap-group2"}>
-                    <div className={"appointments-text-wrapper-5"}>Modify</div>
+                <div className={"appointments-overlap-group2"} onClick={handleModifyClick}>
+                <div className={"appointments-text-wrapper-5"}>Modify</div>
                 </div>
-                <div className={"appointments-text-wrapper-6"}>Modify</div>
                 <div
                     className={"appointments-overlap-group3"}
+                    onClick={handleArrowClick}
                     style={{
-                        backgroundImage: "url(/img/rectangle-26-1.svg)",
+                    backgroundImage: "url(/img/rectangle-26-1.svg)",
                     }}
                 >
-                    <img className={"appointments-arrow"} src={"/img/arrow-1-1.svg"} />
+                <img className={"appointments-arrow"} src={"/img/arrow-1-1.svg"} />
                 </div>
             </div>
         </div>
-    );
-};
+);
+    }
