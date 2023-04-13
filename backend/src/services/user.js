@@ -1,16 +1,15 @@
 const ObjectId = require('mongoose').Types.ObjectId;
-const {User, validate_auth} = require("../models/user");
+const {User} = require("../models/user");
 const {BadRequest, Success, NotFound, Created} = require("../utils/results");
 var bcrypt = require('bcrypt');
 const sgMail = require('@sendgrid/mail');
 const {Appointment} = require("../models/appointment");
-const {Pet} = require("../models/pet");
 const {createAppointment} = require("./appointment");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const findOne = async (id) => {
     if (id !== new ObjectId(id).toString()) return BadRequest("Invalid User Id");
-    let user = await User.findById(id).select('firstName lastName avatar email addresses');
+    let user = await User.findById(id).select('firstName lastName email addresses');
     if (!user) return NotFound("Not found");
     return Success(user);
 }
@@ -65,39 +64,7 @@ const deleteUser = async (id) => {
 }
 
 const requestAppointment = async (appointment) => {
-    // Check if pet exists and belongs to the user
-    const pet = await Pet.findById(appointment.pet);
-    if (!pet || pet.owner.id !== appointment.user)
-        return BadRequest("Invalid Pet");
-
-    // Check if the requested date has already passed
-    if (appointment.date < new Date())
-        return BadRequest("Requested date has already passed");
-
-    // Check if worker exists and can handle the requested appointment type
-    const worker = await Worker.findById(appointment.worker);
-    if (!worker)
-        return BadRequest("Invalid Worker");
-
-    // Create new appointment with Pending status
     let newAppointment = await createAppointment(appointment);
-    newAppointment.status = 'Pending';
-    newAppointment = await Appointment.findByIdAndUpdate(appointment.__id, newAppointment, {new: true});
-
-    // Send email to the worker
-    const workerEmail = worker.email;
-    const petName = pet.name;
-    const appointmentDate = appointment.date.toDateString();
-    const emailBody = `You have a new appointment request for ${appointment.type} on ${appointmentDate} for ${petName}. Please check your schedule and respond within 24 hours.`;
-    const msg = {
-        to: workerEmail,
-        from: process.env.SENDGRID_EMAIL,
-        subject: 'New Appointment Request',
-        text: emailBody,
-        html: `<p>${emailBody}</p>`,
-    };
-    await sgMail.send(msg);
-
     return Success(newAppointment);
 };
 
@@ -107,7 +74,7 @@ const getAppointmentsByUser = async (userId) => {
         return BadRequest("Invalid User Id");
 
     // Find all appointments that belong to the user
-    const appointments = await Appointment.find({user: userId}).populate('pet').populate('worker');
+    const appointments = await Appointment.find({user: userId});
 
     if (appointments.length === 0)
         return NotFound("No Appointments Found");

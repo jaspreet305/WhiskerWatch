@@ -5,6 +5,7 @@ const petSchema = new mongoose.Schema({
     owner: {
         firstName: String,
         lastName: String,
+        email: String,
         id: String,
     },
     name: {
