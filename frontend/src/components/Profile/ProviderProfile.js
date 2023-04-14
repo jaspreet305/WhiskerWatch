@@ -60,13 +60,14 @@ export function ProviderProfile() {
     }
 
     // let userId = useParams();
-    let  userId = 1;
+    let  userId = 2;
     const user = userData.find((user) => user.id === userId);
     let rating = user?.rating;
+    let imageUrl = user?.photo;
 
     return (
-        <Container className="profile-page-container">
-            <Grid className="provider-picture">
+        <Container className="profile-page-container" >
+            <Grid className="provider-picture" style={{ backgroundImage: `url(${imageUrl})`, backgroundSize: 'cover'}}>
                 <Grid>
                     <Button className="back-provider-button" variant="contained"> <ArrowBackIcon /></Button>
                     <Button onClick={handleFavorite} className="favorite-provider-button" variant="contained"> {favorited ? <FavoriteIcon /> : <FavoriteBorderIcon />}</Button>
