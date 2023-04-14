@@ -65,9 +65,10 @@
 .appointments-screen-overlap-group {
   height: 71px;
   left: 22px;
-  position: absolute;
+  position: relative;
   top: 164px;
   width: 330px;
+  cursor: pointer;
 }
 
 .appointments-screen-vector {
@@ -401,6 +402,7 @@
   position: absolute;
   top: 48px;
   width: 36px;
+  cursor: pointer;
 }
 
 .appointments-screen-arrow {

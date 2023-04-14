@@ -16,11 +16,11 @@ export function Login() {
     const [authenticated, setAuthenticated] = useState(null);
     const [loggedIn, setLoggedIn] = useContext(LoggedContext);
 
-    // useEffect(() => {
-    //     if(loggedIn) {
-    //         navigate("/");
-    //     }
-    // }, [loggedIn, navigate]);
+    useEffect(() => {
+        if(loggedIn) {
+            navigate("/home-page");
+        }
+    }, [loggedIn, navigate]);
 
     const handleSignIn = async (event) => {
         event.preventDefault();

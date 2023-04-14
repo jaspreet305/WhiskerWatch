@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './PetDescription.css';
 import {FormControl} from '@mui/material';
 import axios from '../../axios';
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 export const PetDescription = () => {
     const navigate = useNavigate();
@@ -114,9 +114,9 @@ export const PetDescription = () => {
                     <h1 className={"sign-up-page-pet-with-photo-yes-screen-h-1"}>Pet description</h1>
                 </div>
                 <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group6"}>
-                    <a href={"/search"}>
+                    <Link to={"/search"}>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-text-wrapper-7"}>Next</div>
-                    </a>
+                    </Link>
                 </div>
                 <div
                     className={"sign-up-page-pet-with-photo-yes-screen-overlap-group7"}
@@ -124,9 +124,9 @@ export const PetDescription = () => {
                         backgroundImage: "url(/img/rectangle-26-1.svg)",
                     }}
                 >
-                    <a href={"/home-page"}>
+                    <Link to={"/home-page"}>
                         <img className={"sign-up-page-pet-with-photo-yes-screen-arrow"} src={"/img/arrow-1-1.svg"}/>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

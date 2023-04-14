@@ -1,22 +1,40 @@
 import React from "react";
 import "./HomePage.css";
 import { Link, useNavigate } from "react-router-dom";
-import { firstAppointment } from "../Appointments/AppointmentsScreen.js";
 import {useContext, useEffect, useState} from 'react';
 import jwt from 'jwt-decode';
 import axios from '../../axios'
-import {LoggedContext} from "../utils/AuthContext";
+import {LoggedContext} from "../../utils/AuthContext";
 export const HomePage = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   const [loggedIn] = useContext(LoggedContext);
+  const [firstAppointment, setFirstAppointment] = useState(null);
 
   useEffect(() => {
-    //Uncomment that code when neededed its to redirect to login page if not logged in
-    // if (!loggedIn) {
-    //   navigate("/login");
-    // }
+    if (!loggedIn) {
+      navigate("/login");
+    }
+  }, [loggedIn, navigate]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const userToken = localStorage.getItem('userToken');
+      try {
+        const response = await axios.get(`/appointment/`, {
+          headers: {
+            'x-auth-token': userToken,
+          }
+        });
+        setFirstAppointment(response.data[0] || null);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
     const fetchData = async () => {
       const userToken = localStorage.getItem('userToken');
       let userId;
@@ -90,10 +108,12 @@ export const HomePage = () => {
     };
 
     fetchData();
-  }, [loggedIn, navigate]);
+  }, []);
+
   function goToPetProfile(petId) {
     navigate(`/pet-profile/${petId}`);
   }
+
   const petPics = user.pets
       ? user.pets.map((pet) => {
         let petPic;
@@ -133,6 +153,7 @@ export const HomePage = () => {
 
   const petDivs = [...petPics, ...(numPetDivs < 3 ? [...remainingPetDivs, addPetDiv] : [])];
 
+  console.log(user)
     return (
       <div className={"home-page-screen-div"}>
         <div className={"home-page-screen-div-2"}>
@@ -153,6 +174,7 @@ export const HomePage = () => {
             </div>
             <div className={"home-page-screen-location"}>
               <img className={"home-page-screen-icon-location-pin"} src={"/img/-2.svg"} />
+              <div className={"home-page-screen-icon-location-text"}>{user.city}</div>
             </div>
             <div className={"home-page-screen-woman-wrapper"}>
               <img className={"home-page-screen-woman"} src={"/img/woman-1.png"} />
@@ -164,7 +186,7 @@ export const HomePage = () => {
           </div>
           <p className={"home-page-screen-p"}>What are you looking for?</p>
           <div className={"home-page-screen-text-wrapper-3"}>Appointments</div>
-          <Link to={{ pathname: "/search", search: "?type=training" }}>
+          <Link to={{ pathname: "/search/trainer" }}>
           <div className={"home-page-screen-training"}>
             <div className={"home-page-screen-div-3"}>
               <img className={"home-page-screen-pablo-dog-training"} src={"/img/pablo-dog-training-1.png"} />
@@ -172,7 +194,7 @@ export const HomePage = () => {
             </div>
           </div>
             </Link>
-          <Link to={{ pathname: "/search", search: "?type=Sitting" }}>
+          <Link to={{ pathname: "/search/sitter" }}>
           <div className={"home-page-screen-boarding"}>
             <div className={"home-page-screen-div-3"}>
               <img className={"home-page-screen-image"} src={"/img/image-3.png"} />
@@ -184,7 +206,7 @@ export const HomePage = () => {
           </div>
             </Link>
           <div className={"home-page-screen-text-wrapper-5"}>See all</div>
-            <Link to={{ pathname: "/search", search: "?type=Grooming" }}>
+            <Link to={{ pathname: "/search/groomer" }}>
           <div className={"home-page-screen-grooming"}>
             <div className={"home-page-screen-div-3"}>
               <img className={"home-page-screen-urban-animal-care"} src={"/img/urban-animal-care-1-1.png"} />
@@ -204,7 +226,7 @@ export const HomePage = () => {
                 <div className={"home-page-screen-text-wrapper-11"}>No appointments</div>
           )}
 
-          <a href={"/appointments-screen"}>
+          <Link to={"/appointments-screen"}>
           <div
               className={"home-page-screen-overlap-group5"}
               style={{
@@ -213,7 +235,7 @@ export const HomePage = () => {
           >
             <img className={"home-page-screen-arrow"} src={"/img/arrow-2-4.svg"} />
           </div>
-          </a>
+          </Link>
         </div>
       </div>
   );

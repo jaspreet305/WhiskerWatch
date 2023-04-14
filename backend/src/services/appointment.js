@@ -4,6 +4,11 @@ const sgMail = require('@sendgrid/mail');
 const {User} = require("../models/user");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
+const getAppointments = async (userId) => {
+    const appointments = await Appointment.find({user: userId}).populate('user');
+    return Success(appointments);
+}
+
 const createAppointment = async (appointment) => {
     const user = await User.findById(appointment.user);
     if (!user) {
@@ -69,6 +74,7 @@ const editAppointment = async (appointmentId, date) => {
     return Success(a);
 };
 
+exports.getAppointments = getAppointments;
 exports.createAppointment = createAppointment;
 exports.cancelAppointment = cancelAppointment;
 exports.editAppointment = editAppointment;

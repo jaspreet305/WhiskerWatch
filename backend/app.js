@@ -12,4 +12,5 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/user", require("./src/controllers/user"));
 app.use("/worker", require("./src/controllers/worker"));
 app.use("/pet", require("./src/controllers/pet"));
+app.use("/appointment", require("./src/controllers/appointment"));
 module.exports = app;

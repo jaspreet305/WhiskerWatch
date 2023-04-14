@@ -1,6 +1,6 @@
 import React from "react";
 import "./PetProviderSearch.css";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 export const PetProviderSearch = () => {
     const {workerType} = useParams();
@@ -48,10 +48,19 @@ export const PetProviderSearch = () => {
         setSearch(event.target.value);
     }
 
-
     return (
         <div className={"pet-provider-search-div"}>
             <div className={"pet-provider-search-div-2"}>
+                <Link to={"/home-page"}>
+                    <div
+                        className={"pet-provider-search-arrow-overlap-group7"}
+                        style={{
+                            backgroundImage: "url(/img/rectangle-26-1.svg)",
+                        }}
+                    >
+                        <img className={"pet-provider-search-arrow"} src={"/img/arrow-1-1.svg"}/>
+                    </div>
+                </Link>
                 <div className={"pet-provider-search-overlap"}>
                     <h1 className={"pet-provider-search-explore"}>Explore</h1>
                     <input className={"pet-provider-search-rectangle"} placeholder={"Search"} onChange={onSearchChange}/>

@@ -11,6 +11,7 @@ const AuthContext = ({children}) => {
             try {
                 user = jwtDecode(localStorage.userToken);
             } catch {
+                localStorage.removeItem('userToken');
             }
             if (user) setLoggedIn(true);
         }

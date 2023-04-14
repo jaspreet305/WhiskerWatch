@@ -119,6 +119,15 @@
   width: 24px;
 }
 
+.home-page-screen-icon-location-text {
+  font-family: "SF Compact Rounded-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  left: 35px;
+  position: absolute;
+  top: 13px;
+}
+
 .home-page-screen-woman-wrapper {
   background-color: #f9c8837d;
   border-radius: 10px;
@@ -262,7 +271,7 @@
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 129px;
+  top: 100px;
 }
 
 .home-page-screen-h-1 {
@@ -272,10 +281,10 @@
   font-weight: 400;
   left: 36px;
   letter-spacing: 0;
-  line-height: normal;
+  line-height: inherit;
   position: absolute;
-  text-align: center;
-  top: 170px;
+  top: 135px;
+  width: 200px;
 }
 
 .home-page-screen-p {
