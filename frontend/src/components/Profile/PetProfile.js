@@ -5,15 +5,17 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
+import {useParams, useNavigate} from "react-router-dom";
 import axios from "../../axios";
 
 export function PetProfile() {
-
+    const { petId } = useParams();
+    const navigate = useNavigate();
     const [pet, setPet] = useState({});
 
-    useEffect(() => { 
-        axios.get("pet/64355e7872a61b3b2efbab56") // pet id hard coded for now. waiting for home page to be implemented
+    useEffect(() => {
+        axios.get(`pet/${petId}`) // pet id hard coded for now. waiting for home page to be implemented
             .then((response) => {
                 console.log(response);
                 setPet(response?.data);
@@ -33,7 +35,7 @@ export function PetProfile() {
         <Container className="profile-page-container">
             <Grid className="pet-picture">
                 <Grid>
-                    <Button className="back-pet-button" variant="contained"> <ArrowBackIcon /></Button>
+                    <Button className="back-pet-button" variant="contained" onClick={() => navigate('/home-page')}> <ArrowBackIcon /></Button>
                 </Grid>
             </Grid>
             <Grid className="pet-info">

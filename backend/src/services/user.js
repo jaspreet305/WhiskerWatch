@@ -9,7 +9,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const findOne = async (id) => {
     if (id !== new ObjectId(id).toString()) return BadRequest("Invalid User Id");
-    let user = await User.findById(id).select('firstName lastName email city');
+    let user = await User.findById(id).select('-password');
     if (!user) return NotFound("Not found");
     return Success(user);
 }

@@ -7,7 +7,8 @@ import StarIcon from '@mui/icons-material/Star';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { useState, useEffect, useParams } from 'react';
+import { useState, useEffect } from 'react';
+import {useNavigate, useParams} from "react-router-dom";
 
 const userData = [
     {
@@ -54,14 +55,15 @@ const userData = [
 export function ProviderProfile() {
 
     const [favorited, setIsFavorited] = useState(false);
+    const navigate = useNavigate();
 
     const handleFavorite = () => {
         setIsFavorited(!favorited);
     }
 
-    // let userId = useParams();
-    let  userId = 2;
-    const user = userData.find((user) => user.id === userId);
+    let {providerId} = useParams();
+    console.log(providerId)
+    const user = userData.find((user) => user.id.toString() === providerId);
     let rating = user?.rating;
     let imageUrl = user?.photo;
 
@@ -69,7 +71,7 @@ export function ProviderProfile() {
         <Container className="profile-page-container" >
             <Grid className="provider-picture" style={{ backgroundImage: `url(${imageUrl})`, backgroundSize: 'cover'}}>
                 <Grid>
-                    <Button className="back-provider-button" variant="contained"> <ArrowBackIcon /></Button>
+                    <Button className="back-provider-button" variant="contained" onClick={() => navigate("/search")}> <ArrowBackIcon /></Button>
                     <Button onClick={handleFavorite} className="favorite-provider-button" variant="contained"> {favorited ? <FavoriteIcon /> : <FavoriteBorderIcon />}</Button>
                 </Grid>
             </Grid>

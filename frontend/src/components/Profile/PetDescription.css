@@ -61,7 +61,7 @@
 
 .sign-up-page-pet-with-photo-yes-screen-next {
     height: 32px;
-    left: 20px;
+    left: 26px;
     position: absolute;
     top: 19px;
     width: 94px;
@@ -90,9 +90,9 @@
 
 .sign-up-page-pet-with-photo-yes-screen-name {
     height: 53px;
-    left: 18px;
+    left: 26px;
     position: absolute;
-    top: 60px;
+    top: 65px;
     width: 281px;
 }
 
@@ -120,7 +120,7 @@
 
 .sign-up-page-pet-with-photo-yes-screen-overlap-wrapper {
     height: 53px;
-    left: 18px;
+    left: 26px;
     position: absolute;
     top: 124px;
     width: 281px;
@@ -142,7 +142,7 @@
 
 .sign-up-page-pet-with-photo-yes-screen-overlap-group3-wrapper {
     height: 53px;
-    left: 18px;
+    left: 26px;
     position: absolute;
     top: 184px;
     width: 281px;
@@ -164,7 +164,7 @@
 
 .sign-up-page-pet-with-photo-yes-screen-overlap-group4-wrapper {
     height: 53px;
-    left: 18px;
+    left: 26px;
     position: absolute;
     top: 244px;
     width: 281px;
@@ -186,7 +186,7 @@
 
 .sign-up-page-pet-with-photo-yes-screen-overlap-group5-wrapper {
     height: 53px;
-    left: 18px;
+    left: 26px;
     position: absolute;
     top: 304px;
     width: 281px;
@@ -194,7 +194,7 @@
 
 .sign-up-page-pet-with-photo-yes-screen-overlap-group100-wrapper {
     height: 53px;
-    left: 18px;
+    left: 26px;
     position: absolute;
     top: 364px;
     width: 281px;
@@ -202,7 +202,7 @@
 
 .sign-up-page-pet-with-photo-yes-screen-overlap-group101-wrapper {
     height: 53px;
-    left: 18px;
+    left: 26px;
     position: absolute;
     top: 424px;
     width: 281px;
@@ -302,10 +302,10 @@
     background-color: #f9c983;
     border-radius: 100px;
     height: 49px;
-    left: 231px;
     position: absolute;
-    top: 740px;
     width: 119px;
+    transform: translateX(-20%);
+    bottom: 15px;
 }
 
 .sign-up-page-pet-with-photo-yes-screen-text-wrapper-7 {
@@ -343,5 +343,5 @@
     padding: 10px;
     border: 2px solid #f9c983;
     font-size: 16px;
-    width: 202px;
+    width: 100%;
 }

@@ -1,9 +1,10 @@
 import React from "react";
 import "./PetProviderSearch.css";
-import {Link, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 
 export const PetProviderSearch = () => {
     const {workerType} = useParams();
+    const navigate = useNavigate();
     const [workerTypeState, setWorkerTypeState] = React.useState(workerType || "none");
 
     const [search, setSearch] = React.useState("");
@@ -82,7 +83,7 @@ export const PetProviderSearch = () => {
                 <div className={"pet-provider-container"}>
                     {petProviders.filter((petProvider) => search === "" ? true : (petProvider.name.toLowerCase().includes(search.toLowerCase()) || petProvider.expertise.toLowerCase().includes(search.toLowerCase())))
                         .filter((petProvider) => workerTypeState === "none" ? true : petProvider.expertise === workerTypeState).map((petProvider) => (
-                      <div className={"pet-provider-search-overlap-group"}>
+                      <div className={"pet-provider-search-overlap-group"} onClick={() => navigate(`/provider-profile/${petProvider.id}`)}>
                         <div className={"pet-provider-search-text-wrapper-4"}>{petProvider.name}</div>
                         <div className={"pet-provider-search-dog-sitter"}>{capitalizeFirstLetter(petProvider.expertise)}</div>
                         <div className={"pet-provider-search-age"}>Age</div>

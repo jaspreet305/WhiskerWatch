@@ -173,6 +173,7 @@
   width: 326px;
   position: relative;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .pet-provider-search-text-wrapper-4 {

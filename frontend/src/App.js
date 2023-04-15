@@ -23,8 +23,8 @@ function App() {
                 {/* <Route path="/" element={<Layout />}> */}
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/login" element={<Login/>}/>
-                <Route path="/pet-profile" element={<PetProfile />} />
-                <Route path="/provider-profile" element={<ProviderProfile />} />
+                <Route path="/pet-profile/:petId" element={<PetProfile />} />
+                <Route path="/provider-profile/:providerId" element={<ProviderProfile />} />
                 <Route path="/appointments" element={<Appointments />} />
                 <Route path="/logged-out" element={<LoggedOut />} />
                 <Route path="/appointments-screen" element={<AppointmentsScreen />} />

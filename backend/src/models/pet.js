@@ -9,8 +9,7 @@ const petSchema = new mongoose.Schema({
         id: String,
     },
     name: {
-        type: String,
-        enum: ["male", "female"],
+        type: String
     },
     petType: {
         type: String,
@@ -35,12 +34,6 @@ const petSchema = new mongoose.Schema({
     },
     details: {
         type: String
-    },
-    gender: {
-        type: String,
-    },
-    petDetails: {
-        type: String,
     },
     date: {
         type: String,

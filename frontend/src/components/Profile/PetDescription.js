@@ -21,11 +21,15 @@ export const PetDescription = () => {
         event.preventDefault();
         let data = new FormData(event.currentTarget);
 
+        for (let pair of data.entries()) {
+            console.log(pair[0]+ ', ' + pair[1]);
+        }
+
         try {
             const response = await axios.post('/pet/', data, {
                 headers: {
                     'x-auth-token': `${localStorage.getItem('userToken')}`,
-                    'Content-Type': 'multipart/form-data',
+                    // 'Content-Type': 'multipart/form-data',
                 },
             });
             navigate('/home-page', {state: {petType: formValues.petType}});
@@ -65,8 +69,8 @@ export const PetDescription = () => {
                             </select>
                         </div>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group3-wrapper"}>
-                            <select name="petType" className="pet-type-dropdown" onChange={handleChange} required>
-                                <option value="">Select pet type</option>
+                            <select name="sex" className="pet-type-dropdown" onChange={handleChange} required>
+                                <option value="">Select pet gender</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>
@@ -76,7 +80,7 @@ export const PetDescription = () => {
                                    pattern="\d{4}[-/]\d{2}[-/]\d{2}" required/>
                         </div>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group5-wrapper"}>
-                            <input type="text" name={"petDetails"}
+                            <input type="text" name={"details"}
                                    placeholder="Enter pet details" onChange={handleChange} required/>
                         </div>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group100-wrapper"}>
@@ -85,7 +89,7 @@ export const PetDescription = () => {
                                    pattern="^(1[0-9]{1,1}|[1-9][0-9]{0,1}|120)$" required/>
                         </div>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group101-wrapper"}>
-                            <select name="petType" className="pet-type-dropdown" onChange={handleChange} required>
+                            <select name="health" className="pet-type-dropdown" onChange={handleChange} required>
                                 <option value="" style={{color: "#f9c983"}}>Select pet type</option>
                                 <option value="fit">Fit</option>
                                 <option value="healthy">Healthy</option>
@@ -95,16 +99,8 @@ export const PetDescription = () => {
                         </div>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group-wrapper"}>
                             <button style={{background: "none", border: "none"}} type={"submit"}>
-                                <div
-                                    className={"sign-up-page-pet-with-photo-yes-screen-overlap-group"}
-                                    style={{
-                                        backgroundImage: "url(/img/vector-3.svg)",
-                                    }}
-                                >
-                                    <img className={"sign-up-page-pet-with-photo-yes-screen-vector"}
-                                         src={"/img/vector-4.svg"}/>
-                                    <img className={"sign-up-page-pet-with-photo-yes-screen-img"}
-                                         src={"/img/vector-5.svg"}/>
+                                <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group6"}>
+                                <div className={"sign-up-page-pet-with-photo-yes-screen-text-wrapper-7"}>Next</div>
                                 </div>
                             </button>
                         </div>
@@ -112,11 +108,6 @@ export const PetDescription = () => {
                 </div>
                 <div className={"sign-up-page-pet-with-photo-yes-screen-text"}>
                     <h1 className={"sign-up-page-pet-with-photo-yes-screen-h-1"}>Pet description</h1>
-                </div>
-                <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group6"}>
-                    <Link to={"/search"}>
-                        <div className={"sign-up-page-pet-with-photo-yes-screen-text-wrapper-7"}>Next</div>
-                    </Link>
                 </div>
                 <div
                     className={"sign-up-page-pet-with-photo-yes-screen-overlap-group7"}

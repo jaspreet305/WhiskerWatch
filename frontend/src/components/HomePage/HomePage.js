@@ -47,63 +47,8 @@ export const HomePage = () => {
         setUser(response.data);
       } catch (err) {
         console.log(err);
-        //using a hardcoded user to test the app since my db is empty
-        setUser({
-            firstName: "John",
-            lastName: "Doe",
-            email: "Jonh@test.com",
-            password: "123456",
-            city: "QUEBEC BEST CITY EVER",
-          pets: [
-            {
-              _id: "1",
-              petName: "Fido",
-              petType: "dog",
-              age: 3,
-              gender: "Male",
-              breed: "Golden Retriever",
-              weight: "75",
-              color: "Yellow",
-              bio: "I'm Fido, I love chasing tennis balls and long walks on the beach.",
-              vetInfo: {
-                name: "Dr. Johnson",
-                phone: "555-1234",
-                address: "123 Main St, Anytown USA"
-              }
-            },
-            {
-              _id: "2",
-              petName: "Tweety",
-              petType: "bird",
-              age: 1,
-              gender: "Female",
-              breed: "Parakeet",
-              weight: "0.5",
-              color: "Green",
-              bio: "I'm Tweety, I love chirping and eating seeds.",
-              vetInfo: {
-                name: "Dr. Smith",
-                phone: "555-5678",
-                address: "456 Oak St, Anytown USA"
-              }
-            } , {
-              _id: "3",
-              petName: "Tweety",
-              petType: "bird",
-              age: 1,
-              gender: "Female",
-              breed: "Parakeet",
-              weight: "0.5",
-              color: "Green",
-              bio: "I'm Tweety, I love chirping and eating seeds.",
-              vetInfo: {
-                name: "Dr. Smith",
-                phone: "555-5678",
-                address: "456 Oak St, Anytown USA"
-              }
-            }
-          ]
-        });
+        localStorage.removeItem('userToken')
+        navigate("/login");
       }
     };
 
@@ -127,6 +72,9 @@ export const HomePage = () => {
           case "cat":
             petPic = <img className={"home-page-screen-animal"} src={"/img/cat.png"} />;
             break;
+          case "fish":
+            petPic = <img className={"home-page-screen-animal"} src={"/img/fish.png"} />;
+            break;
           default:
             petPic = null;
         }
@@ -140,14 +88,14 @@ export const HomePage = () => {
 
   const addPetDiv = (
       <div className={"home-page-screen-add-more"} onClick={() => navigate("/pet-description")}>
-        <img className={"home-page-screen-img-3"} src={"/img/1200px-Plus_symbol.svg.png"} />
+        <img className={"home-page-screen-img-3"} src={"/img/1200px-Plus_symbol.svg"} />
       </div>
   );
 
   const numPetDivs = petPics.length;
   const remainingPetDivs = numPetDivs < 3 ? Array.from({ length: 3 - numPetDivs - 1 }, (_, i) => (
       <div  className={"home-page-screen-add-more"} onClick={() => navigate("/pet-description")}>
-          <img className={"home-page-screen-img-3"} src={"/img/1200px-Plus_symbol.svg.png"} />
+          <img className={"home-page-screen-img-3"} src={"/img/1200px-Plus_symbol.svg"} />
       </div>
   )) : [];
 

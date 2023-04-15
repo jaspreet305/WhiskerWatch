@@ -1,6 +1,7 @@
 const ObjectId = require('mongoose').Types.ObjectId;
 const {Pet} = require("../models/pet");
 const {BadRequest, Success, NotFound, Created} = require("../utils/results");
+const {User} = require("../models/user");
 
 const findAll = async () => {
     let pets = await Pet.find();
@@ -22,6 +23,11 @@ const findOne = async (id) => {
 const create = async (pet) => {
     let p = await new Pet(pet);
     await p.save();
+
+    const user = await User.findById(pet.owner.id);
+    user.pets.push(p);
+    await user.save();
+
     return Created(p);
 };
 
