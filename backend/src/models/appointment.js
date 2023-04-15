@@ -5,6 +5,10 @@ const appointmentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
+    providerId: {
+        type: String,
+        required: true
+    },
     date: {
         type: Date,
         required: true
@@ -12,6 +16,10 @@ const appointmentSchema = new mongoose.Schema({
     type: {
         type: String,
         enum: ['grooming', 'sitting', 'training'],
+        required: true
+    },
+    time: {
+        type: String,
         required: true
     }
 });

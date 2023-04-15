@@ -32,7 +32,7 @@ function App() {
                 <Route path="/pet-description" element={<PetDescription />} />
                 <Route path="/provider-description" element={<ProviderDescription />} />
                 <Route path="/search/:workerType?" element={<PetProviderSearch />} />
-                <Route path="/book-appointment" element={<BookAppointmentPortal />} />
+                <Route path="/book-appointment/:providerId" element={<BookAppointmentPortal />} />
             </Routes>
           </BrowserRouter>
       </AuthContext>

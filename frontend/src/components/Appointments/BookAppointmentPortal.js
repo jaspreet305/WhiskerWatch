@@ -4,10 +4,55 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from 'react-select';
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
+const userData = [
+  {
+    id: 1,
+    name: "Noah Assayag",
+    cost: "$28",
+    expertise: "Sitter",
+    age: 22,
+    rating: 5,
+    sex: "Male",
+    location: "Montreal, Quebec",
+    photo: "https://i.pravatar.cc/300?u=a042581f4e895267f4d",
+    details: "Noah Assayag is an animal lover who has had a dog for the past 12 years. He is a very experienced dog walker and caretaker! He specializes in dog walking, but can also provide other services such as grooming and dog watching. He has experience with all breeds, ranging from chihuahas to german shepherds. Noah himself is the owner of Beast, a shih tzu. He also owns three ducks, one octopus, 3 parrots and one salamander.",
+    email: "assayagnoah@gmail.com"
+  },
+  {
+    id: 2,
+    name: "Emma Thompson",
+    cost: "$35",
+    expertise: "Trainer",
+    age: 30,
+    rating: 4,
+    sex: "Female",
+    location: "Beijing, China",
+    photo: "https://i.pravatar.cc/300?u=a042581f4e295267f4d",
+    details: "Emma is an experienced cat trainer who has a deep understanding of feline behavior and psychology. She has a natural affinity for cats and has honed her skills over many years of working with them. Emma's approach to cat training is both patient and firm, ensuring that her feline clients feel safe and comfortable while also making progress in their training. She understands that every cat is unique and tailors her training methods to suit each individual cat's personality and needs.",
+    email: "emmathompson@gmail.com"
+  },
+  {
+    id: 3,
+    name: "John Doe",
+    cost: "$20",
+    expertise: "Groomer",
+    age: 40,
+    rating: 3,
+    sex: "Male",
+    location: "Nairobi, Kenya",
+    photo: "https://i.pravatar.cc/300?u=a04q581f4e295267f4d",
+    details: "John Doe is a professional dog groomer who has been working in the industry for over 10 years. He has experience with all breeds of dogs and specializes in grooming dogs with long hair. He is a very patient and gentle groomer who is able to calm even the most nervous dogs. He is also a very experienced dog walker and has experience with dogs of all sizes and temperaments. John is the owner of two dogs, a golden retriever named Max and a poodle named Charlie.",
+    email: "johndoe@gmail.com"
+  },
+]
 
 export const BookAppointmentPortal = () => {
+  let {providerId} = useParams();
+
+  const provider = userData.find((p) => p.id.toString() === providerId);
+
   const handleDateChange = (date) => {
     console.log(date);
   };
@@ -83,7 +128,7 @@ export const BookAppointmentPortal = () => {
         <div className={"book-appointment-portal-text-wrapper-4"}>Appointment Type</div>
         <div className={"book-appointment-portal-overlap-group5"}>
           <img className={"book-appointment-portal-arrow-2"} src={"/img/arrow-2.svg"} />
-          <div className={"book-appointment-portal-text-wrapper-5"}>Dog Walking</div>
+          <div className={"book-appointment-portal-text-wrapper-5"}>{provider?.expertise.slice(0, -2) + "ing"}</div>
         </div>
         <div className={"book-appointment-portal-overlap-group2"}>
           <div className={"book-appointment-portal-text-wrapper-6"}>Confirm Appointment</div>
@@ -99,7 +144,6 @@ export const BookAppointmentPortal = () => {
               className={"book-appointment-portal-select"}
             />
           <img className={"book-appointment-portal-img"} src={"/img/arrow-1-2.svg"} />
-          <div className={"book-appointment-portal-text-wrapper-8"}></div>
         </div>
       </div>
     </div>
