@@ -5,7 +5,7 @@ const {User} = require("../models/user");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const getAppointments = async (userId) => {
-    const appointments = await Appointment.find({user: userId}).populate('user');
+    const appointments = await Appointment.find({user: userId});
     return Success(appointments);
 }
 
@@ -46,14 +46,11 @@ const cancelAppointment = async (appointmentId) => {
     return Success(deletedAppointment._id);
 };
 
-const editAppointment = async (appointmentId, date) => {
+const editAppointment = async (appointmentId, appointment) => {
     if (!appointmentId)
         return BadRequest("Appointment id not found");
 
-    let a = await Appointment.findById(appointmentId);
-    a.date = date;
-
-    a = await Appointment.findById(appointmentId, a, {new: true});
+    const a = await Appointment.findByIdAndUpdate(appointmentId, appointment, {new: true});
 
     if (!a)
         return NotFound("Error while updating the appointment");
