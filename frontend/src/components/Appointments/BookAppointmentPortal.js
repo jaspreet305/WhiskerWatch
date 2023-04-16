@@ -72,6 +72,15 @@ export const BookAppointmentPortal = () => {
         {value: '09:00', label: '09:00 AM'},
         {value: '09:30', label: '09:30 AM'},
         {value: '10:00', label: '10:00 AM'},
+        {value: '09:00', label: '09:00 AM'},
+        {value: '09:30', label: '09:30 AM'},
+        {value: '10:00', label: '10:00 AM'},
+        {value: '09:00', label: '09:00 AM'},
+        {value: '09:30', label: '09:30 AM'},
+        {value: '10:00', label: '10:00 AM'},
+        {value: '09:00', label: '09:00 AM'},
+        {value: '09:30', label: '09:30 AM'},
+        {value: '10:00', label: '10:00 AM'},
     ];
 
     const appointmentType = provider?.expertise.slice(0, -2) + "ing";
@@ -108,7 +117,7 @@ export const BookAppointmentPortal = () => {
         setSelectedTime(selectedOption);
         setAppointment({
             user: null,
-            providerId: null, type: appointmentType.toLowerCase(), date: selectedDate, time: selectedTime
+            providerId: null, type: appointmentType.toLowerCase(), date: selectedDate, time: selectedOption.label
         })
         console.log(`Selected time:`, selectedOption);
     };
@@ -186,6 +195,7 @@ export const BookAppointmentPortal = () => {
                             isSearchable={false}
                             styles={customStyles}
                             className={"book-appointment-portal-select"}
+                            menuPortalTarget={document.body}
                         />
                         <img className={"book-appointment-portal-img"} src={"/img/arrow-1-2.svg"}/>
                     </div>
