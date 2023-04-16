@@ -30,19 +30,6 @@ const cancelAppointment = async (appointmentId) => {
     if (!deletedAppointment)
         return BadRequest("Appointment not found");
 
-    // Send email to user
-    const userEmail = deletedAppointment.user.email;
-    const appointmentDate = deletedAppointment.date.toDateString();
-    const emailBody = `Your appointment for ${deletedAppointment.type} on ${appointmentDate} has been cancelled. We apologize for any inconvenience caused.`;
-    const userMsg = {
-        to: userEmail,
-        from: process.env.SENDGRID_EMAIL,
-        subject: 'Appointment Cancelled',
-        text: emailBody,
-        html: `<p>${emailBody}</p>`,
-    };
-    await sgMail.send(userMsg);
-
     return Success(deletedAppointment._id);
 };
 
@@ -54,19 +41,6 @@ const editAppointment = async (appointmentId, appointment) => {
 
     if (!a)
         return NotFound("Error while updating the appointment");
-
-    // Send email to user
-    const userEmail = a.user.email;
-    const appointmentDate = a.date.toDateString();
-    const emailBody = `Your appointment for ${a.type} has been rescheduled to ${appointmentDate}. Thank you for choosing our service!`;
-    const userMsg = {
-        to: userEmail,
-        from: process.env.SENDGRID_EMAIL,
-        subject: 'Appointment Rescheduled',
-        text: emailBody,
-        html: `<p>${emailBody}</p>`,
-    };
-    await sgMail.send(userMsg);
 
     return Success(a);
 };

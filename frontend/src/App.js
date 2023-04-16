@@ -25,7 +25,7 @@ function App() {
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/pet-profile/:petId" element={<PetProfile />} />
                 <Route path="/provider-profile/:providerId" element={<ProviderProfile />} />
-                <Route path="/appointments" element={<Appointments />} />
+                <Route path="/appointments/:appointmentId" element={<Appointments />} />
                 <Route path="/logged-out" element={<LoggedOut />} />
                 <Route path="/appointments-screen" element={<AppointmentsScreen />} />
                 <Route path="/home-page" element={<HomePage />} />

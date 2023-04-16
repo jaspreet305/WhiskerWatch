@@ -72,15 +72,15 @@ export const BookAppointmentPortal = () => {
         {value: '09:00', label: '09:00 AM'},
         {value: '09:30', label: '09:30 AM'},
         {value: '10:00', label: '10:00 AM'},
-        {value: '09:00', label: '09:00 AM'},
-        {value: '09:30', label: '09:30 AM'},
-        {value: '10:00', label: '10:00 AM'},
-        {value: '09:00', label: '09:00 AM'},
-        {value: '09:30', label: '09:30 AM'},
-        {value: '10:00', label: '10:00 AM'},
-        {value: '09:00', label: '09:00 AM'},
-        {value: '09:30', label: '09:30 AM'},
-        {value: '10:00', label: '10:00 AM'},
+        {value: '10:30', label: '10:30 AM'},
+        {value: '11:00', label: '11:00 AM'},
+        {value: '11:30', label: '11:30 AM'},
+        {value: '12:00', label: '12:00 PM'},
+        {value: '12:30', label: '12:30 PM'},
+        {value: '13:00', label: '13:00 PM'},
+        {value: '13:30', label: '13:30 PM'},
+        {value: '14:00', label: '14:00 PM'},
+        {value: '14:30', label: '14:30 PM'},
     ];
 
     const appointmentType = provider?.expertise.slice(0, -2) + "ing";
@@ -128,32 +128,6 @@ export const BookAppointmentPortal = () => {
         navigate("/search");
     };
 
-    const customStyles = {
-        control: (provided, state) => ({
-            ...provided,
-            height: '50px',
-            borderRadius: '8px',
-            border: state.isFocused ? '1px solid #F8D1CB' : '1px solid #E5E5E5',
-            boxShadow: state.isFocused ? '0 0 4px #F8D1CB' : 'none',
-            '&:hover': {
-                border: state.isFocused ? '1px solid #F8D1CB' : '1px solid #E5E5E5',
-            }
-        }),
-        option: (provided, state) => ({
-            ...provided,
-            backgroundColor: state.isSelected ? '#F8D1CB' : 'white',
-            color: state.isSelected ? 'white' : '#495057',
-            '&:hover': {
-                backgroundColor: '#F8D1CB',
-                color: 'white',
-            },
-        }),
-        singleValue: (provided) => ({
-            ...provided,
-            color: '#495057',
-        }),
-    };
-
     return (
         <div className={"book-appointment-portal-div"}>
             <div className={"book-appointment-portal-book-appointment-portal"}>
@@ -182,24 +156,20 @@ export const BookAppointmentPortal = () => {
                     <img className={"book-appointment-portal-arrow-2"} src={"/img/arrow-2.svg"}/>
                     <div className={"book-appointment-portal-text-wrapper-5"}>{appointmentType}</div>
                 </div>
-                <button onClick={() => confirmAppointment(appointment)} style={{border: "none"}}
-                        className={"book-appointment-portal-overlap-group2"}>
-                    <div className={"book-appointment-portal-text-wrapper-6"}>Confirm Appointment</div>
-                </button>
                 <div className={"book-appointment-portal-overlap-group1"}>
-                    <div className={"book-appointment-portal-time-selection-wrapper"}>
                         <Select
                             value={selectedTime}
                             onChange={handleTimeChange}
                             options={timeOptions}
-                            isSearchable={false}
-                            styles={customStyles}
-                            className={"book-appointment-portal-select"}
                             menuPortalTarget={document.body}
+                            closeMenuOnSelect={false}
                         />
                         <img className={"book-appointment-portal-img"} src={"/img/arrow-1-2.svg"}/>
-                    </div>
                 </div>
+                <button onClick={() => confirmAppointment(appointment)} style={{border: "none"}}
+                        className={"book-appointment-portal-overlap-group2"}>
+                    <div className={"book-appointment-portal-text-wrapper-6"}>Confirm Appointment</div>
+                </button>
             </div>
         </div>
     );
