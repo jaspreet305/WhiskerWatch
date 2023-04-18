@@ -149,11 +149,8 @@ export const HomePage = () => {
         <div className={"home-page-screen-div"}>
             <div className={"home-page-screen-div-2"}>
                 <div className={"home-page-screen-overlap"}>
-                    <div className={"home-page-screen-message"}>
-                        <img className={"home-page-screen-img-2"} src={"/img/image-2.svg"}/>
-                    </div>
                     <div className={"home-page-screen-bell"}>
-                        <img className={"home-page-screen-img-2"} src={"/img/-3.svg"}/>
+                        <img className={"home-page-screen-img-2"} src={"/img/log-out.png"}/>
                     </div>
                     <div className={"home-page-screen-location"}>
                         <img className={"home-page-screen-icon-location-pin"} src={"/img/-2.svg"}/>

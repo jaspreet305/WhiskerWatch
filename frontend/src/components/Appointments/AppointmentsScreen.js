@@ -3,7 +3,6 @@ import "./AppointmentsScreen.css";
 import {useNavigate} from "react-router-dom";
 import axios from "../../axios";
 import {LoggedContext} from "../../utils/AuthContext";
-import {Link} from "@mui/icons-material";
 
 const providers = [
     {
@@ -85,23 +84,24 @@ export const AppointmentsScreen = () => {
         navigate("/home-page");
     }
 
-    const seeDetails = (appointmentId) => {
-        navigate(`/appointments/${appointmentId}`);
+    const seeDetails = (appointmentId, appointment, providerId) => {
+        navigate(`/appointments/${appointmentId}/${appointment.date}/${providerId}`);
     }
 
     return (
         <div className={"appointments-screen-div"}>
             <div className={"appointments-screen-div-2"}>
                 {appointments.map((appointment, index) => (
-                        <div key={index} className={"appointments-screen-overlap-group"} onClick={() => seeDetails(appointment._id)}>
-                            <div className={"appointments-screen-rectangle"}/>
-                            <div
-                                className={"appointments-screen-text-wrapper-5"}>{providers.find((p) => p.id.toString() === appointment.providerId).name}</div>
-                            <div
-                                className={"appointments-screen-text-wrapper-6"}>{appointment.type.charAt(0).toUpperCase() + appointment.type.slice(1)}</div>
-                            <div className={"appointments-screen-text-wrapper-7"}>{appointment.date.slice(0, 10)}</div>
-                            <div className={"appointments-screen-text-wrapper-8"}>{appointment.time}</div>
-                        </div>
+                    <div key={index} className={"appointments-screen-overlap-group"}
+                         onClick={() => seeDetails(appointment._id, appointment, providers.find((p) => p.id.toString() === appointment.providerId).id)}>
+                        <div className={"appointments-screen-rectangle"}/>
+                        <div
+                            className={"appointments-screen-text-wrapper-5"}>{providers.find((p) => p.id.toString() === appointment.providerId).name}</div>
+                        <div
+                            className={"appointments-screen-text-wrapper-6"}>{appointment.type.charAt(0).toUpperCase() + appointment.type.slice(1)}</div>
+                        <div className={"appointments-screen-text-wrapper-7"}>{appointment.date.slice(0, 10)}</div>
+                        <div className={"appointments-screen-text-wrapper-8"}>{appointment.time}</div>
+                    </div>
                 ))}
                 <div className={"appointments-screen-text"}>
                     <h1 className={"appointments-screen-h-1"}>Appointments</h1>

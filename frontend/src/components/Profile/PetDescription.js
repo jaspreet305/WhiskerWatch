@@ -75,10 +75,6 @@ export const PetDescription = () => {
                                 <option value="female">Female</option>
                             </select>
                         </div>
-                        <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group4-wrapper"}>
-                            <input type="text" name="date" placeholder="Enter pet date of birth" onChange={handleChange}
-                                   pattern="\d{4}[-/]\d{2}[-/]\d{2}" required/>
-                        </div>
                         <div className={"sign-up-page-pet-with-photo-yes-screen-overlap-group5-wrapper"}>
                             <input type="text" name={"details"}
                                    placeholder="Enter pet details" onChange={handleChange} required/>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./PetProviderSearch.css";
 import {Link, useNavigate, useParams} from "react-router-dom";
+import StarIcon from "@mui/icons-material/Star";
 
 export const PetProviderSearch = () => {
     const {workerType} = useParams();
@@ -88,7 +89,7 @@ export const PetProviderSearch = () => {
                         <div className={"pet-provider-search-dog-sitter"}>{capitalizeFirstLetter(petProvider.expertise)}</div>
                         <div className={"pet-provider-search-age"}>Age</div>
                         <div className={"pet-provider-search-text-wrapper-5"}>Cost</div>
-                        <div className={"pet-provider-search-element-stars"}>{petProvider.rating} Stars</div>
+                        <div className={"pet-provider-search-element-stars"}>{petProvider.rating}</div>
                         <div className={"pet-provider-search-element-yrs"}>{petProvider.age} Yrs</div>
                         <div className={"pet-provider-search-text-wrapper-6"}>Rating</div>
                         <div className={"pet-provider-search-text-wrapper-7"}>Expertise</div>
@@ -108,12 +109,6 @@ export const PetProviderSearch = () => {
                              src={petProvider.photo}/>
                     </div>
                     ))}
-                </div>
-                <img className={"pet-provider-search-left-side"} src={"/img/left-side.png"}/>
-                <div className={"pet-provider-search-right-side"}>
-                    <img className={"pet-provider-search-battery"} src={"/img/battery-5.png"}/>
-                    <img className={"pet-provider-search-img"} src={"/img/wifi-10.svg"}/>
-                    <img className={"pet-provider-search-icon-bar-chart"} src={"/img/mobile-signal-5.svg"}/>
                 </div>
             </div>
         </div>

@@ -116,7 +116,7 @@ export function ProviderProfile() {
                 </div>
                 <div>
                     <Button onClick={() => navigate(`/book-appointment/${user.id}`)} className="contact-provider-button" variant="contained" >
-                        Contact Provider
+                        Book Appointment
                     </Button>
                 </div>
             </Grid>
