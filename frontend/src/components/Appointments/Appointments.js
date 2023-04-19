@@ -127,7 +127,7 @@ export const Appointments = () => {
                         backgroundImage: "url(/img/rectangle-26-1.svg)",
                     }}
                 >
-                    <img className={"appointments-arrow"} src={"/img/arrow-1-1.svg"}/>
+                    <img className={"appointments-arrow2"} src={"/img/arrow-1-1.svg"}/>
                 </div>
             </div>
         </div>

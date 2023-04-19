@@ -171,22 +171,11 @@
 }
 
 .home-page-screen-animal {
-  height: 50px;
-  left: 20px;
+  height: 86px;
   object-fit: cover;
-  position: absolute;
-  top: 20px;
-  width: 50px;
-}.home-page-screen-pet1 {
-  height: 50px;
-  left: 20px;
-  object-fit: cover;
-  top: 2022px;
-  width: 50px;
+  width: 86px;
+  border-radius: 10%;
 }
-
-
-
 .home-page-screen-add-more {
   background-color: #f9c983;
   border: 2px dashed;
@@ -383,7 +372,7 @@
 }
 
 .home-page-screen-text-wrapper-5 {
-  color: #1a224e;
+  color: #000000;
   font-family: "SF Compact Rounded-Bold", Helvetica;
   font-size: 18px;
   font-weight: 700;

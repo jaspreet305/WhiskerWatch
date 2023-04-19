@@ -107,16 +107,16 @@ export const HomePage = () => {
             let petPic;
             switch (pet.petType) {
                 case "dog":
-                    petPic = <img className={"home-page-screen-animal"} src={"/img/dog-1-1.png"}/>;
+                    petPic = <img className={"home-page-screen-animal"} src={"https://www.gannett-cdn.com/presto/2020/03/17/USAT/c0eff9ec-e0e4-42db-b308-f748933229ee-XXX_ThinkstockPhotos-200460053-001.jpg?crop=1170%2C658%2Cx292%2Cy120&width=1200"}/>;
                     break;
                 case "bird":
-                    petPic = <img className={"home-page-screen-animal"} src={"/img/bird.png"}/>;
+                    petPic = <img className={"home-page-screen-animal"} src={"https://cf.ltkcdn.net/birds/bird-species/images/orig/324030-1600x1066-sun-conure-care.jpg"}/>;
                     break;
                 case "cat":
-                    petPic = <img className={"home-page-screen-animal"} src={"/img/cat.png"}/>;
+                    petPic = <img className={"home-page-screen-animal"} src={"https://cdn-prd.content.metamorphosis.com/wp-content/uploads/sites/6/2022/12/shutterstock_781327003-1.jpg"}/>;
                     break;
                 case "fish":
-                    petPic = <img className={"home-page-screen-animal"} src={"/img/fish.png"}/>;
+                    petPic = <img className={"home-page-screen-animal"} src={"https://www.animalsaroundtheglobe.com/wp-content/uploads/2022/07/david-clode-iLwQIbWxv-s-unsplash.jpg"}/>;
                     break;
                 default:
                     petPic = null;

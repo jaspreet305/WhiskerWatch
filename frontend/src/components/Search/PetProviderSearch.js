@@ -40,6 +40,36 @@ export const PetProviderSearch = () => {
             sex: "Male",
             photo: "https://i.pravatar.cc/300?u=a04q581f4e295267f4d",
         },
+        {
+            id: 4,
+            name: "Mia Smith",
+            cost: "$25/hr",
+            expertise: "sitter",
+            age: 35,
+            rating: 4.7,
+            sex: "Female",
+            photo: "https://i.pravatar.cc/400?img=49",
+        },
+        {
+            id: 5,
+            name: "Olivia Williams",
+            cost: "$30/hr",
+            expertise: "trainer",
+            age: 26,
+            rating: 4.9,
+            sex: "Female",
+            photo: "https://i.pravatar.cc/400?img=5",
+        },
+        {
+            id: 6,
+            name: "Bob Smith",
+            cost: "$20/hr",
+            expertise: "Groomer",
+            age: 28,
+            rating: 4.1,
+            sex: "Male",
+            photo: "https://i.pravatar.cc/400?img=11",
+        }
     ]);
 
     function capitalizeFirstLetter(string) {
