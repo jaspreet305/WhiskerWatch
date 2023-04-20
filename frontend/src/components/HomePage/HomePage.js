@@ -102,6 +102,11 @@ export const HomePage = () => {
         navigate(`/pet-profile/${petId}`);
     }
 
+    const logout = () => {
+        localStorage.removeItem('userToken')
+        navigate("/login");
+    }
+
     const petPics = user.pets
         ? user.pets.map((pet) => {
             let petPic;
@@ -144,13 +149,12 @@ export const HomePage = () => {
 
     const petDivs = [...petPics, ...(numPetDivs < 3 ? [...remainingPetDivs, addPetDiv] : [])];
 
-    console.log(user)
     return (
         <div className={"home-page-screen-div"}>
             <div className={"home-page-screen-div-2"}>
                 <div className={"home-page-screen-overlap"}>
                     <div className={"home-page-screen-bell"}>
-                        <img className={"home-page-screen-img-2"} src={"/img/log-out.png"}/>
+                        <img className={"home-page-screen-img-2"} src={"/img/log-out.png"} onClick={logout}/>
                     </div>
                     <div className={"home-page-screen-location"}>
                         <img className={"home-page-screen-icon-location-pin"} src={"/img/-2.svg"}/>

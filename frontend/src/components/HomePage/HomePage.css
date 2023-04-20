@@ -92,10 +92,11 @@
 }
 
 .home-page-screen-bell {
+  cursor: pointer;
   background-color: #f9c8837d;
   border-radius: 10px;
   height: 45px;
-  left: 280px;
+  left: 290px;
   position: absolute;
   top: 40px;
   width: 10%;
