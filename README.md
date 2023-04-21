@@ -9,6 +9,10 @@ SOEN357 Project Winter 2023. Pet-care App.
 - Oumar Barry
 - Anis Brachemi
 
+## Ressources
+Figma: https://www.figma.com/file/KkF8DEnekH4f3K828WdsJS/Whisker-Watch-App-357?node-id=0-1&t=WKqq5y4KZRNbMe59-0
+Demo Video: https://www.youtube.com/watch?v=4idK-fZFRCw
+
 ### How to run the code:
 1.Clone the repository 
 
