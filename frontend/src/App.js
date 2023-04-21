@@ -20,7 +20,7 @@ function App() {
         <AuthContext>
             <BrowserRouter>
                 <Routes>
-                    {/* <Route path="/" element={<Layout />}> */}
+                    <Route path="/" element={<HomePage />}/>
                     <Route path="/signup" element={<SignUp/>}/>
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/pet-profile/:petId" element={<PetProfile/>}/>
