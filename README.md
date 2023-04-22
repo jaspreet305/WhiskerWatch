@@ -14,6 +14,8 @@ SOEN357 Project Winter 2023. Pet-care App.
 - Figma: https://www.figma.com/file/KkF8DEnekH4f3K828WdsJS/Whisker-Watch-App-357?node-id=0-1&t=WKqq5y4KZRNbMe59-0
 
 ### How to run the code:
+Before starting, please make sure Node Package Manager (NPM) is installed.
+
 1. Clone the repository 
 
 2. Open a new terminal
